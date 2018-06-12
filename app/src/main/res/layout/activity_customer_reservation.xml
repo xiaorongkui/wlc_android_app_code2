@@ -81,6 +81,7 @@
             android:background="@color/textGray"/>
 
         <ScrollView
+            android:visibility="invisible"
             android:id="@+id/customer_reservation_sv"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -89,15 +90,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/y40"
+                    android:layout_height="@dimen/y30"
                     android:gravity="center"
                     android:text="@string/reservation_details"
-                    android:textSize="@dimen/text_size_26"/>
+                    android:textSize="@dimen/text_size_24"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -164,6 +165,7 @@
                     <TextView
                         android:id="@+id/reservation_product_tv"
                         android:layout_width="wrap_content"
+                        android:textSize="@dimen/text_size_16"
                         android:layout_height="wrap_content"
                         android:text="@string/reservation_product"/>
 
@@ -175,7 +177,6 @@
                         android:layout_toEndOf="@id/reservation_product_tv"
                         android:overScrollMode="never"
                         android:scrollbars="none"/>
-
                 </RelativeLayout>
 
                 <View

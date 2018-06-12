@@ -143,4 +143,13 @@ public class MainActivity extends BaseActivity {
                 break;
         }
     }
+
+    @Override
+    protected void initHeader() {
+        View storeManagerTv = findViewById(R.id.store_manager_tv);
+        if (storeManagerTv != null) {
+            storeManagerTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, StoreManagementActivity
+                    .class));
+        }
+    }
 }

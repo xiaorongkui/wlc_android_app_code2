@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.model.CharitableListModel;
+import com.qmkj.wlc.model.CustomerResProductListModel;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
 import com.qmkj.wlc.ui.adapter.CustomerReservationProductRecyAdapter;
 import com.qmkj.wlc.ui.adapter.CustomerReservationRecyAdapter;
@@ -56,7 +57,8 @@ public class CustomerReservationActivity extends BaseActivity {
         initRecycleView();
     }
 
-    List<CharitableListModel> listData = new ArrayList<>();
+    List<CharitableListModel> reservationlistData = new ArrayList<>();
+    List<CustomerResProductListModel> productListData = new ArrayList<>();
 
     private void initRecycleView() {
         reservationRecyAdapter = new CustomerReservationRecyAdapter(mContext);
@@ -67,14 +69,14 @@ public class CustomerReservationActivity extends BaseActivity {
         reservationRecyAdapter.setOnItemClickListener((adapter, view, position) -> {
             customerReservationSv.setVisibility(View.VISIBLE);
             if (preSelectPosition >= 0 && preSelectPosition != position) {
-                CharitableListModel pre = listData.get(preSelectPosition);
+                CharitableListModel pre = reservationlistData.get(preSelectPosition);
                 if (pre != null) {
                     pre.setSelect(false);
                 }
             }
-            CharitableListModel currently = listData.get(position);
+            CharitableListModel currently = reservationlistData.get(position);
             currently.setSelect(true);
-            reservationRecyAdapter.update(listData);
+            reservationRecyAdapter.update(reservationlistData);
             preSelectPosition = position;
         });
         reservationRecyAdapter.setOnLoadMoreListener(() -> {
@@ -82,10 +84,9 @@ public class CustomerReservationActivity extends BaseActivity {
         }, customerReservationRv);
 
         for (int i = 0; i < 10; i++) {
-            listData.add(new CharitableListModel());
+            reservationlistData.add(new CharitableListModel());
         }
-        reservationRecyAdapter.update(listData);
-
+        reservationRecyAdapter.update(reservationlistData);
 
         CustomerReservationProductRecyAdapter reservationProductRecyAdapter = new
                 CustomerReservationProductRecyAdapter(mContext);
@@ -93,6 +94,10 @@ public class CustomerReservationActivity extends BaseActivity {
         mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         reservationProductRv.setLayoutManager(reservationProductManager);
         reservationProductRv.setAdapter(reservationProductRecyAdapter);
+        for (int i = 0; i < 5; i++) {
+            productListData.add(new CustomerResProductListModel("商品名称商品名称","X3"));
+        }
+        reservationProductRecyAdapter.update(productListData);
     }
 
     @Override

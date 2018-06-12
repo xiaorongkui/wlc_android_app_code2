@@ -29,4 +29,6 @@
     <string name="refuse_reservation">拒绝预约</string>
     <string name="accept_reservation">接受预约</string>
     <string name="guest_point_list">助客点单</string>
+    <string name="modify_phone">修改手机号</string>
+    <string name="modify_login_password">修改登录密码</string>
 </resources>

@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.model.CharitableListModel;
+import com.qmkj.wlc.model.CustomerResProductListModel;
 import com.qmkj.wlc.ui.adapter.base.XBaseAdapter;
 import com.qmkj.wlc.ui.adapter.base.XBaseViewHolder;
 import com.qmkj.wlc.utils.ResourcesUtil;
@@ -15,7 +16,7 @@ import com.qmkj.wlc.utils.ResourcesUtil;
  * description:
  */
 
-public class CustomerReservationProductRecyAdapter extends XBaseAdapter<CharitableListModel> {
+public class CustomerReservationProductRecyAdapter extends XBaseAdapter<CustomerResProductListModel> {
 
 
     public CustomerReservationProductRecyAdapter(Context context) {
@@ -28,6 +29,6 @@ public class CustomerReservationProductRecyAdapter extends XBaseAdapter<Charitab
     }
 
     @Override
-    protected void convert(XBaseViewHolder helper, CharitableListModel item) {
+    protected void convert(XBaseViewHolder helper, CustomerResProductListModel item) {
     }
 }

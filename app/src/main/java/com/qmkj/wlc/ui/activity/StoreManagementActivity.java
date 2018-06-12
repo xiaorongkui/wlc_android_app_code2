@@ -71,6 +71,7 @@ public class StoreManagementActivity extends BaseActivity {
                 case 5://店员管理
                     break;
                 case 6://个人信息
+                    ActivityUtils.startActivity(mContext, PersonInfoActivity.class);
                     break;
             }
         });
