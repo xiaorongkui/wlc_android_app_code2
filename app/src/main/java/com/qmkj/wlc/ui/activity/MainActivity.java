@@ -128,21 +128,18 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.charitable_donation_rl, R.id.customer_reservation_rl, R.id.guest_order_rl, R.id.guest_list_rl, R
-            .id.store_manager_tv})
+    @OnClick({R.id.charitable_donation_rl, R.id.customer_reservation_rl, R.id.guest_order_rl, R.id.guest_list_rl})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.charitable_donation_rl://慈善捐赠
                 ActivityUtils.startActivity(mContext, CharitableDonActivity.class);
                 break;
             case R.id.customer_reservation_rl://客户预约
+                ActivityUtils.startActivity(mContext, CustomerReservationActivity.class);
                 break;
             case R.id.guest_order_rl://客人订单
                 break;
             case R.id.guest_list_rl://助客点单
-                break;
-            case R.id.store_manager_tv://门店管理
-                ActivityUtils.startActivity(mContext, StoreManagementActivity.class);
                 break;
         }
     }

@@ -7,6 +7,7 @@ import com.qmkj.wlc.R;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
 import com.qmkj.wlc.ui.adapter.StoreManagementGrideAdapter;
 import com.qmkj.wlc.ui.view.FullGridView;
+import com.qmkj.wlc.utils.ActivityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +56,23 @@ public class StoreManagementActivity extends BaseActivity {
                 .store_management_gv_item_, managementData);
         storeManagementGv.setAdapter(storeManagementGrideAdapter);
         storeManagementGv.setOnItemClickListener((parent, view, position, id) -> {
-
+            switch (position) {
+                case 0://慈善管理
+                    ActivityUtils.startActivity(mContext, CharitableDonActivity.class);
+                    break;
+                case 1://商品管理
+                    break;
+                case 2://总部订单
+                    break;
+                case 3://系统公告
+                    break;
+                case 4://区域管理
+                    break;
+                case 5://店员管理
+                    break;
+                case 6://个人信息
+                    break;
+            }
         });
     }
 

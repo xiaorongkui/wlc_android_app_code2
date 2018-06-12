@@ -1,6 +1,7 @@
 package com.qmkj.wlc.ui.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -56,7 +57,9 @@ public class StoreManagementGrideAdapter extends BaseAdapter {
         } else {
             holder = (Holder) convertView.getTag();
         }
-        holder.tv.setText(dataItem);
+        if (!TextUtils.isEmpty(dataItem)) {
+            holder.tv.setText(dataItem);
+        }
         return convertView;
     }
 

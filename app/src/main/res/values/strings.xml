@@ -18,4 +18,15 @@
     <string name="submit">提交</string>
     <string name="login_out">退出登录</string>
     <string name="store_management">门店管理</string>
+    <string name="inputting_appointment_call">输入预约电话</string>
+    <string name="search">查询</string>
+    <string name="reservation_details">预约详情</string>
+    <string name="reservation">预约中</string>
+    <string name="reservation_product">预约产品</string>
+    <string name="not_store">未到店</string>
+    <string name="confirm_store">确认到店</string>
+    <string name="refuse_store">拒绝预约</string>
+    <string name="refuse_reservation">拒绝预约</string>
+    <string name="accept_reservation">接受预约</string>
+    <string name="guest_point_list">助客点单</string>
 </resources>
