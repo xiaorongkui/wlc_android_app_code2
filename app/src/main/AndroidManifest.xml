@@ -27,6 +27,7 @@
         <activity android:name=".ui.activity.CharitableDonActivity"/>
         <activity android:name=".ui.activity.StoreManagementActivity"/>
         <activity android:name=".ui.activity.CustomerReservationActivity"/>
+        <activity android:name=".ui.activity.PersonInfoActivity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

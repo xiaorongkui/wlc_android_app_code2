@@ -3,7 +3,7 @@ package com.qmkj.wlc.model;
 /**
  * author：rongkui.xiao --2018/6/12
  * email：dovexiaoen@163.com
- * description:
+ * description:慈善列表
  */
 
 public class CharitableListModel {
