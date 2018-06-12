@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/common_header"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:background="@color/textGray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/y10"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_marginStart="@dimen/y10"
+                android:layout_marginTop="@dimen/y10"
+                android:background="@drawable/shape_edit"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/inputting_appointment_call"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_size_18"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:text="@string/search"
+                    android:textSize="@dimen/text_size_18"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y1"
+                android:background="@color/textGray"/>
+
+            <com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout
+                android:id="@+id/customer_reservation_xrl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/customer_reservation_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"/>
+            </com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/y1"
+            android:layout_height="match_parent"
+            android:background="@color/textGray"/>
+
+        <ScrollView
+            android:id="@+id/customer_reservation_sv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/y10"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y40"
+                    android:gravity="center"
+                    android:text="@string/reservation_details"
+                    android:textSize="@dimen/text_size_26"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y1"
+                    android:layout_marginTop="@dimen/y10"
+                    android:background="@color/textGray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/x15"
+                    android:layout_marginStart="@dimen/x15"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="到店时间：2018-05-20 13:30"
+                        android:textSize="@dimen/text_size_20"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reservation"
+                        android:textSize="@dimen/text_size_22"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/x15"
+                    android:layout_marginStart="@dimen/x15"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="到店人数：3人，预约区域：包间"
+                        android:textSize="@dimen/text_size_20"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/x15"
+                    android:layout_marginStart="@dimen/x15"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="联系人：张三，联系电话：13112341234"
+                        android:textSize="@dimen/text_size_20"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y10">
+
+                    <TextView
+                        android:id="@+id/reservation_product_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reservation_product"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/reservation_product_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/x10"
+                        android:layout_toEndOf="@id/reservation_product_tv"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y1"
+                    android:background="@color/textGray"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_margin="@dimen/x5"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/y50"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edit"
+                        android:gravity="center"
+                        android:text="@string/not_store"
+                        android:textSize="@dimen/text_size_18"/>
+
+                    <TextView
+                        android:layout_margin="@dimen/x5"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/y50"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edit"
+                        android:gravity="center"
+                        android:text="@string/confirm_store"
+                        android:textSize="@dimen/text_size_18"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_margin="@dimen/x5"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/y50"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edit"
+                        android:gravity="center"
+                        android:text="@string/refuse_reservation"
+                        android:textSize="@dimen/text_size_18"/>
+
+                    <TextView
+                        android:layout_margin="@dimen/x5"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/y50"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edit"
+                        android:gravity="center"
+                        android:text="@string/accept_reservation"
+                        android:textSize="@dimen/text_size_18"/>
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/guest_point_list_bt"
+                    style="@style/btn_blue"
+                    android:layout_marginBottom="@dimen/y20"
+                    android:layout_marginEnd="@dimen/x15"
+                    android:layout_marginStart="@dimen/x15"
+                    android:layout_marginTop="@dimen/y25"
+                    android:text="@string/guest_point_list"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

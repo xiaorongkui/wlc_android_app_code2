@@ -6,6 +6,11 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+import com.qmkj.wlc.R;
+import com.qmkj.wlc.ui.activity.StoreManagementActivity;
+import com.qmkj.wlc.utils.ActivityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,9 +74,26 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (getIntent() != null) {
             initIntentData(getIntent());
         }
+        initHeader();
         initTitle();
         initView();
         initData();
+    }
+
+    protected void initHeader() {
+        View backIv = findViewById(R.id.back_iv);
+        View backTv = findViewById(R.id.back_tv);
+        if (backIv != null) {
+            backIv.setOnClickListener(v -> finish());
+        }
+        if (backTv != null) {
+            backTv.setOnClickListener(v -> finish());
+        }
+        View storeManagerTv = findViewById(R.id.store_manager_tv);
+        if (storeManagerTv != null) {
+            storeManagerTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, StoreManagementActivity
+                    .class));
+        }
     }
 
     @Override

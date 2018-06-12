@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/common_header"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:background="@color/textGray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/x300"
+                android:layout_height="@dimen/y200"
+                android:layout_marginTop="@dimen/y10"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:text="账号：qweqweqdw"
+                android:textSize="@dimen/text_size_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y10"
+                android:text="姓名：张三"
+                android:textSize="@dimen/text_size_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y10"
+                android:text="手机：131****1234 "
+                android:textSize="@dimen/text_size_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y10"
+                android:text="职务：店员"
+                android:textSize="@dimen/text_size_24"/>
+
+            <TextView
+                android:layout_width="@dimen/x300"
+                android:layout_height="@dimen/y60"
+                android:layout_marginTop="@dimen/y40"
+                android:background="@drawable/shape_login_out"
+                android:gravity="center"
+                android:text="@string/login_out"
+                android:textSize="@dimen/text_size_28"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/y1"
+            android:layout_height="match_parent"
+            android:background="@color/textGray"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.qmkj.wlc.ui.view.FullGridView
+                android:id="@+id/store_management_gv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/y5"
+                android:background="@color/color_white_1"
+                android:clickable="false"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="2"
+                android:scrollbars="horizontal"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
