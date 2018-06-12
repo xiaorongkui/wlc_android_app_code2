@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
+import com.qmkj.wlc.ui.adapter.DonateRecordAdapter;
 import com.qmkj.wlc.ui.adapter.StoreManagementGrideAdapter;
 import com.qmkj.wlc.ui.view.FullGridView;
 import com.qmkj.wlc.utils.ActivityUtils;
@@ -58,7 +59,7 @@ public class StoreManagementActivity extends BaseActivity {
         storeManagementGv.setOnItemClickListener((parent, view, position, id) -> {
             switch (position) {
                 case 0://慈善管理
-                    ActivityUtils.startActivity(mContext, CharitableDonActivity.class);
+                    ActivityUtils.startActivity(mContext, DonateRecordActivity.class);
                     break;
                 case 1://商品管理
                     break;
