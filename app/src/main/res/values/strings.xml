@@ -2,4 +2,20 @@
     <string name="app_name">wlc</string>
     <string name="exit_application_click_once_again">再按一次退出程序</string>
     <string name="loading_net">请求中···</string>
+    <string name="more">更多</string>
+    <string name="charitable_donation">慈善捐赠</string>
+    <string name="back">返回</string>
+    <string name="donation_program">捐赠项目:</string>
+    <string name="donation_money">捐赠金额</string>
+    <string name="donation_money_notice">捐赠金额，单位:元</string>
+    <string name="donation_account">捐赠人账号</string>
+    <string name="donation_account_notice">捐赠人的登录账号</string>
+    <string name="donation_person">捐赠人</string>
+    <string name="donation_name_notice">捐赠人姓名，非必填</string>
+    <string name="mark">备注</string>
+    <string name="donation_mark_notice">捐赠备注，最多200字，非必填</string>
+    <string name="pay_method">支付方式</string>
+    <string name="submit">提交</string>
+    <string name="login_out">退出登录</string>
+    <string name="store_management">门店管理</string>
 </resources>

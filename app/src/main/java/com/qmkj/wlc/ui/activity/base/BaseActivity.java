@@ -6,6 +6,10 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+import com.qmkj.wlc.R;
+import com.qmkj.wlc.utils.ActivityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,9 +73,21 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (getIntent() != null) {
             initIntentData(getIntent());
         }
+        initBack();
         initTitle();
         initView();
         initData();
+    }
+
+    protected void initBack() {
+        View backIv = findViewById(R.id.back_iv);
+        View backTv = findViewById(R.id.back_tv);
+        if (backIv != null) {
+            backIv.setOnClickListener(v -> finish());
+        }
+        if (backTv != null) {
+            backTv.setOnClickListener(v -> finish());
+        }
     }
 
     @Override

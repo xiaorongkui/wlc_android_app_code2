@@ -15,6 +15,10 @@ public class LogUtil {
         if (show) Logger.i(tag + ": %s", msg);
     }
 
+    public static void i( String msg) {
+        if (show) Logger.i( "wlc: %s", msg);
+    }
+
     public static void d(String tag, String msg) {
         if (show) Logger.d(tag + ": %s", msg);
     }

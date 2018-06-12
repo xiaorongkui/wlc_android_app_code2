@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="btn" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/color_white_1</item>
+        <item name="android:layout_height">@dimen/y40</item>
+        <item name="android:textSize">@dimen/text_size_17</item>
+
+    </style>
+
+    <style name="btn_blue" parent="btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/shape_btn_bule</item>
+    </style>
+
 </resources>
