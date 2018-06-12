@@ -9,4 +9,6 @@
 
     <color name="textBlack">@color/black</color>
     <color name="textGray">#999999</color>
+
+    <color name="item_line">#ececec</color>
 </resources>

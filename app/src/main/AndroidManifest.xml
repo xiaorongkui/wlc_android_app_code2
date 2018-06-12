@@ -32,6 +32,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <activity android:name=".ui.activity.CustomerOrderActivity" />
+        <activity android:name=".ui.activity.HelpCustomerOrderActivity" />
+        <activity android:name=".ui.activity.DonateRecordActivity"></activity>
     </application>
 
 </manifest>
