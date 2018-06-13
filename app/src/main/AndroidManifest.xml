@@ -42,6 +42,9 @@
         <activity android:name=".ui.activity.CustomerOrderActivity" />
         <activity android:name=".ui.activity.HelpCustomerOrderActivity" />
         <activity android:name=".ui.activity.DonateRecordActivity"></activity>
+        <activity android:name=".ui.activity.CommodityManagementActivity"/>
+        <activity android:name=".ui.activity.HeadquartersOrderActivity"/>
+        <activity android:name=".ui.activity.SystemSettingActivity"/>
     </application>
 
 </manifest>
