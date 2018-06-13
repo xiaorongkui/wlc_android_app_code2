@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x15"
+                android:layout_marginStart="@dimen/x15"
+                android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="商品min成功"
+        android:textSize="@dimen/text_size_18"/>
+
+    <TextView
+        android:id="@+id/amount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="X1"
+        android:textSize="@dimen/text_size_18"/>
+</RelativeLayout>
