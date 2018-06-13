@@ -62,8 +62,10 @@ public class StoreManagementActivity extends BaseActivity {
                     ActivityUtils.startActivity(mContext, DonateRecordActivity.class);
                     break;
                 case 1://商品管理
+                    ActivityUtils.startActivity(mContext, CommodityManagementActivity.class);
                     break;
                 case 2://总部订单
+                    ActivityUtils.startActivity(mContext, HeadquartersOrderActivity.class);
                     break;
                 case 3://系统公告
                     break;

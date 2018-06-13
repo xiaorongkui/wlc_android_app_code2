@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.ui.activity.StoreManagementActivity;
+import com.qmkj.wlc.ui.activity.SystemSettingActivity;
 import com.qmkj.wlc.utils.ActivityUtils;
 
 import java.util.ArrayList;
@@ -93,6 +94,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (storeManagerTv != null) {
             storeManagerTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, StoreManagementActivity
                     .class));
+        }
+        View systemSettingTv = findViewById(R.id.system_manager_tv);
+        if (systemSettingTv != null) {
+            systemSettingTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, SystemSettingActivity.class));
         }
     }
 

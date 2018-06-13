@@ -141,8 +141,7 @@ public class CharitableDonActivity extends BaseActivity {
         payMethodData.add("XX支付");
         payMethodData.add("线下支付");
         CharitableGrideAdapter charitableGrideAdapter = new CharitableGrideAdapter(mContext, R.layout
-                .chartiable_pay_method_gv_item_,
-                payMethodData);
+                .chartiable_pay_method_gv_item_, payMethodData);
         payMethodGv.setAdapter(charitableGrideAdapter);
         payMethodGv.setOnItemClickListener((parent, view, position, id) -> {
 

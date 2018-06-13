@@ -153,5 +153,9 @@ public class MainActivity extends BaseActivity {
             storeManagerTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, StoreManagementActivity
                     .class));
         }
+        View systemSettingTv = findViewById(R.id.system_manager_tv);
+        if (systemSettingTv != null) {
+            systemSettingTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, SystemSettingActivity.class));
+        }
     }
 }

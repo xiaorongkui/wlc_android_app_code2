@@ -39,4 +39,22 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/textGray</item>
     </style>
+
+    <style name="progressBarHorizontal" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <!-- 这个属性就是配置进度的颜色和背景的颜色 -->
+        <item name="android:progressDrawable">@drawable/progressbar_upload_bg</item>
+        <item name="android:minHeight">@dimen/y2</item>
+        <item name="android:maxHeight">@dimen/y2</item>
+    </style>
+
+    <style name="common_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@drawable/shape_common_dialog_bg</item><!--背景透明-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item><!-- 模糊 -->
+    </style>
 </resources>
