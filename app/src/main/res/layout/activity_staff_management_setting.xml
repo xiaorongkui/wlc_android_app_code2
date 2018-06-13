@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_header"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout
+            android:id="@+id/staff_manage_xrl"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:focusable="true">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/staff_manage_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none"/>
+        </com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout>
+
+        <View style="@style/line_v"/>
+
+        <include
+            android:id="@+id/staff_manage_form_layout"
+            android:visibility="gone"
+            layout="@layout/activity_staff_management_form" />
+
+        <LinearLayout
+            android:id="@+id/staff_manage_person_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/staff_manage_add_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新增店员"/>
+
+            <View style="@style/line_h"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y180"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="账号：asdasdasdasd"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="姓名：张三"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="手机号：13112341234"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="职务：店员"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/staff_manage_delete_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="删除账号"/>
+                    <Button
+                        android:id="@+id/staff_manage_change_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="修改职务"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <View style="@style/line_h"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

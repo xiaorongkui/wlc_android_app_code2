@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_header"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/staff_manage_tv"
+            android:layout_width="@dimen/y180"
+            android:layout_height="@dimen/y180"
+            android:gravity="center"
+            android:background="@drawable/shape_home_item"
+            android:text="店员管理"
+            android:textSize="@dimen/text_size_30"/>
+
+        <TextView
+            android:id="@+id/staff_duty_manage_tv"
+            android:layout_width="@dimen/y180"
+            android:layout_height="@dimen/y180"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/staff_manage_tv"
+            android:layout_marginLeft="@dimen/y20"
+            android:background="@drawable/shape_home_item"
+            android:text="职务管理"
+            android:textSize="@dimen/text_size_30"/>
+    </RelativeLayout>
+
+</LinearLayout>
