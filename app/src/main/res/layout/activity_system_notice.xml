@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.qmkj.wlc.ui.activity.CustomerOrderActivity">
+
+    <include layout="@layout/common_header"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- 订单条目 -->
+        <com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout
+            android:id="@+id/system_notice_refreshLayout"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/system_notice_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout>
+
+        <View style="@style/line_v"/>
+        <!-- 订单表单 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y40"
+                android:gravity="center"
+                android:text="公告详情"/>
+            <View style="@style/line_h"/>
+
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></WebView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="区域名称"
+        android:textSize="@dimen/text_size_15"/>
+
+
+
+    <EditText
+        android:id="@+id/area_name_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y15"
+        android:hint="请输入区域名称，2~8个字"
+        android:maxLength="16"
+        android:singleLine="true"
+        android:background="@null"
+        android:textSize="@dimen/text_size_14"
+        android:textCursorDrawable="@null"/>
+    <View
+        android:layout_marginTop="@dimen/y10"
+        style="@style/line_h"/>
+
+</LinearLayout>
