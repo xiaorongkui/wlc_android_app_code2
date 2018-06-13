@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.qmkj.wlc.R;
+import com.qmkj.wlc.ui.dialog.base.BaseDialog;
 
 
 /**

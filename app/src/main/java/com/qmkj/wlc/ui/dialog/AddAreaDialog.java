@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.qmkj.wlc.R;
+import com.qmkj.wlc.ui.dialog.base.BaseDialog;
 
 /**
  * 创建日期：2018/6/13

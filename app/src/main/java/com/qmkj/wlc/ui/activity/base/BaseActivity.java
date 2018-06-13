@@ -104,6 +104,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (systemSettingTv != null) {
             systemSettingTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, SystemSettingActivity.class));
         }
+
     }
 
     @Override

@@ -50,6 +50,16 @@
         <activity android:name=".ui.activity.StaffManagementSettingActivity" />
         <activity android:name=".ui.activity.DutyManagementActivity" />
         <activity android:name=".ui.activity.StaffManagementChangeActivity"></activity>
+        <activity android:name=".ui.activity.DonateRecordActivity" />
+        <activity
+            android:name=".ui.activity.MessageCenterActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".ui.activity.SystemNoticeActivity" />
+        <activity android:name=".ui.activity.AreaManagementActivity" />
+        <activity android:name=".ui.activity.StaffManagementActivity" />
+        <activity android:name=".ui.activity.StaffManagementSettingActivity" />
+        <activity android:name=".ui.activity.DutyManagementActivity" />
+        <activity android:name=".ui.activity.StaffManagementChangeActivity"></activity>
         <activity android:name=".ui.activity.CommodityManagementActivity"/>
         <activity android:name=".ui.activity.HeadquartersOrderActivity"/>
         <activity android:name=".ui.activity.SystemSettingActivity"/>
