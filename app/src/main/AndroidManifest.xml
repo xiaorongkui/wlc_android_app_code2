@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.qmkj.wlc">
+    package="com.qmkj.wlc">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".App"
@@ -13,21 +13,20 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ui.activity.SplashActivity">
+        <activity android:name=".ui.activity.SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.MainActivity"
-            android:launchMode="singleTask"/>
-        <activity android:name=".ui.activity.CharitableDonActivity"/>
-        <activity android:name=".ui.activity.StoreManagementActivity"/>
-        <activity android:name=".ui.activity.CustomerReservationActivity"/>
-        <activity android:name=".ui.activity.PersonInfoActivity"/>
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.activity.CharitableDonActivity" />
+        <activity android:name=".ui.activity.StoreManagementActivity" />
+        <activity android:name=".ui.activity.CustomerReservationActivity" />
+        <activity android:name=".ui.activity.PersonInfoActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -36,12 +35,21 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
         <activity android:name=".ui.activity.CustomerOrderActivity" />
         <activity android:name=".ui.activity.HelpCustomerOrderActivity" />
-        <activity android:name=".ui.activity.DonateRecordActivity"></activity>
+        <activity android:name=".ui.activity.DonateRecordActivity" />
+        <activity
+            android:name=".ui.activity.MessageCenterActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".ui.activity.SystemNoticeActivity" />
+        <activity android:name=".ui.activity.AreaManagementActivity" />
+        <activity android:name=".ui.activity.StaffManagementActivity" />
+        <activity android:name=".ui.activity.StaffManagementSettingActivity" />
+        <activity android:name=".ui.activity.DutyManagementActivity" />
+        <activity android:name=".ui.activity.StaffManagementChangeActivity"></activity>
         <activity android:name=".ui.activity.CommodityManagementActivity"/>
         <activity android:name=".ui.activity.HeadquartersOrderActivity"/>
         <activity android:name=".ui.activity.SystemSettingActivity"/>

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.model.AppUpdateModel;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
-import com.qmkj.wlc.ui.dialog.base.BaseDialog;
+import com.qmkj.wlc.ui.view.BaseDialog;
 import com.qmkj.wlc.utils.ResourcesUtil;
 
 import butterknife.ButterKnife;

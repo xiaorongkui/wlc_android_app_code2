@@ -5,6 +5,8 @@
     <string name="more">更多</string>
     <string name="charitable_donation">慈善捐赠</string>
     <string name="back">返回</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
     <string name="donation_program">捐赠项目:</string>
     <string name="donation_money">捐赠金额</string>
     <string name="donation_money_notice">捐赠金额，单位:元</string>

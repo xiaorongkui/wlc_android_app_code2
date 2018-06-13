@@ -5,7 +5,6 @@ import android.widget.TextView;
 
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
-import com.qmkj.wlc.ui.adapter.DonateRecordAdapter;
 import com.qmkj.wlc.ui.adapter.StoreManagementGrideAdapter;
 import com.qmkj.wlc.ui.view.FullGridView;
 import com.qmkj.wlc.utils.ActivityUtils;
@@ -68,10 +67,13 @@ public class StoreManagementActivity extends BaseActivity {
                     ActivityUtils.startActivity(mContext, HeadquartersOrderActivity.class);
                     break;
                 case 3://系统公告
+                    ActivityUtils.startActivity(mContext,SystemNoticeActivity.class);
                     break;
                 case 4://区域管理
+                    ActivityUtils.startActivity(mContext,AreaManagementActivity.class);
                     break;
                 case 5://店员管理
+                    ActivityUtils.startActivity(mContext,StaffManagementActivity.class);
                     break;
                 case 6://个人信息
                     ActivityUtils.startActivity(mContext, PersonInfoActivity.class);
