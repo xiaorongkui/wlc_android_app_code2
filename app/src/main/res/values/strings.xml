@@ -3,7 +3,6 @@
     <string name="exit_application_click_once_again">再按一次退出程序</string>
     <string name="loading_net">请求中···</string>
     <string name="more">更多</string>
-    <string name="charitable_donation">慈善捐赠</string>
     <string name="back">返回</string>
     <string name="confirm">确认</string>
     <string name="cancel">取消</string>
@@ -42,7 +41,7 @@
     <string name="login_pwd">登录密码</string>
     <string name="your_login_pwd">你的登录密码</string>
     <string name="new_login_pwd">新登录密码</string>
-    <string name="password_notice">字母、数字、6-16个字符</string>
+    <string name="password_notice">字母、数字、6–16个字符</string>
     <string name="duplicate_password">重复密码</string>
     <string name="duplicate_password_notice">再次输入新登录密码</string>
     <string name="old_login_pwd">旧登录密码</string>
@@ -50,7 +49,7 @@
     <string name="new_goods">新增商品</string>
     <string name="product_detail">商品详情</string>
     <string name="product_name">商品名字</string>
-    <string name="product_name_notice">2-32个字</string>
+    <string name="product_name_notice">2–32个字</string>
     <string name="product_price">商品售价</string>
     <string name="product_price_notice">商品售价，单位：元</string>
     <string name="commodity_classification">商品分类</string>
@@ -69,4 +68,17 @@
     <string name="update_app_later">稍后升级</string>
     <string name="update_app_loading">正在升级，请稍后</string>
     <string name="update_notice">升级提示</string>
+    <string name="charitable_donation">慈善捐赠</string>
+    <string name="commodity_management">商品管理</string>
+    <string name="headquarters_order">总部订单</string>
+    <string name="system_notice">系统公告</string>
+    <string name="regional_management">区域管理</string>
+    <string name="shop_assistant_management">店员管理</string>
+    <string name="person_info">个人信息</string>
+    <string name="custom_product">定制产品</string>
+    <string name="high_grade_products">高档产品</string>
+    <string name="common_product">普通产品</string>
+    <string name="fast_food_area">快餐区</string>
+    <string name="wine">酒水</string>
+    <string name="gift_area">赠送区</string>
 </resources>

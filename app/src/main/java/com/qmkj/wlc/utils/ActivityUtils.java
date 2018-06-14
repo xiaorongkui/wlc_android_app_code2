@@ -29,4 +29,6 @@ public class ActivityUtils {
         context.startActivity(new Intent(context, cls));
         ((Activity) context).finish();
     }
+
+
 }
