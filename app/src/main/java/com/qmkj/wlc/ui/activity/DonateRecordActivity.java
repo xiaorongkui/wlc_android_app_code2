@@ -8,20 +8,26 @@ import com.qmkj.wlc.R;
 import com.qmkj.wlc.model.DonateRecordRes;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
 import com.qmkj.wlc.ui.adapter.DonateRecordAdapter;
+import com.qmkj.wlc.ui.view.XRecyclerView;
 import com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout;
 
 import butterknife.BindView;
 
+/**
+ * 创建日期：2018/6/14
+ * @author Yi Shan Xiang
+ * 文件名称： 捐赠记录
+ * email: 380948730@qq.com
+ */
 public class DonateRecordActivity extends BaseActivity {
 
     @BindView(R.id.donate_record_refreshLayout)
     XRefreshLayout donateRefreshLayout;
     @BindView(R.id.donate_record_recyclerView)
-    RecyclerView donateRecyclerView;
+    XRecyclerView donateRecyclerView;
 
     private DonateRecordAdapter donateDetailsAdapter;
 
-    boolean mIsCanRefresh = true;
     boolean mIsLoadMore;
     int mPage;
 
@@ -38,13 +44,7 @@ public class DonateRecordActivity extends BaseActivity {
     @Override
     protected void initView() {
         donateDetailsAdapter = new DonateRecordAdapter(mContext);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        donateRecyclerView.setLayoutManager(layoutManager);
         donateRecyclerView.setAdapter(donateDetailsAdapter);
-        //添加分割线
-        donateRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
         donateDetailsAdapter.addData(new DonateRecordRes());
         donateDetailsAdapter.addData(new DonateRecordRes());
         donateDetailsAdapter.addData(new DonateRecordRes());
@@ -62,23 +62,10 @@ public class DonateRecordActivity extends BaseActivity {
 
             @Override
             public boolean checkCanDoRefresh(View content, View header) {
-                return mIsCanRefresh;
-            }
-        });
-
-        //设置滑动监听
-        donateRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                int topRowVerticalPosition =
-                        (recyclerView == null || recyclerView.getChildCount() == 0) ? 0 : recyclerView.getChildAt(0)
-                                .getTop();
-                mIsCanRefresh = topRowVerticalPosition >= 0;
-            }
-
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
+                if(donateRecyclerView!=null){
+                    return donateRecyclerView.isCanRefresh();
+                }
+                return true;
             }
         });
 

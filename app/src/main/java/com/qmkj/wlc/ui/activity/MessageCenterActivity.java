@@ -1,26 +1,28 @@
 package com.qmkj.wlc.ui.activity;
 
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.model.MessageCenterRes;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
 import com.qmkj.wlc.ui.adapter.MessageCenterAdapter;
+import com.qmkj.wlc.ui.view.XRecyclerView;
 import com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout;
 
 import butterknife.BindView;
 
+/**
+ * 创建日期：2018/6/14
+ * @author Yi Shan Xiang
+ * 文件名称： 消息中心
+ * email: 380948730@qq.com
+ */
 public class MessageCenterActivity extends BaseActivity {
     @BindView(R.id.message_center_refreshLayout)
     XRefreshLayout messageRefreshLayout;
     @BindView(R.id.message_center_recyclerView)
-    RecyclerView messageRecyclerView;
+    XRecyclerView messageRecyclerView;
 
     private MessageCenterAdapter messageCenterAdapter;
-    boolean mIsCanRefresh = true;
     boolean mIsLoadMore;
     int mPage;
 
@@ -37,13 +39,7 @@ public class MessageCenterActivity extends BaseActivity {
     @Override
     protected void initView() {
         messageCenterAdapter = new MessageCenterAdapter(mContext);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        messageRecyclerView.setLayoutManager(layoutManager);
         messageRecyclerView.setAdapter(messageCenterAdapter);
-        //添加分割线
-        messageRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
         messageCenterAdapter.addData(new MessageCenterRes());
         messageCenterAdapter.addData(new MessageCenterRes());
         messageCenterAdapter.addData(new MessageCenterRes());
@@ -59,29 +55,14 @@ public class MessageCenterActivity extends BaseActivity {
                 mPage = 0;
                 getDataFromNet();
             }
-
             @Override
             public boolean checkCanDoRefresh(View content, View header) {
-                return mIsCanRefresh;
+                if(messageRecyclerView!=null){
+                    return messageRecyclerView.isCanRefresh();
+                }
+                return true;
             }
         });
-
-        //设置滑动监听
-        messageRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                int topRowVerticalPosition =
-                        (recyclerView == null || recyclerView.getChildCount() == 0) ? 0 : recyclerView.getChildAt(0)
-                                .getTop();
-                mIsCanRefresh = topRowVerticalPosition >= 0;
-            }
-
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-        });
-
         //设置上拉加载更多监听
         messageCenterAdapter.setOnLoadMoreListener(() -> {
             mIsLoadMore = true;

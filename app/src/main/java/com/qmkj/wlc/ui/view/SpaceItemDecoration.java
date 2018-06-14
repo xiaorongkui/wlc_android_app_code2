@@ -36,7 +36,7 @@ public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
             outRect.top = 0;
         }
         if (isLastRow(pos, total)) {
-            outRect.bottom = 5;
+            outRect.bottom = 0;
         }
         if (column != DEFAULT_COLUMN) {
             float avg = (column - 1) * space * 1.0f / column;

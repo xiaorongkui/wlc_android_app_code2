@@ -21,12 +21,15 @@ public class HelpCustomerGoodsDetailsAdapter extends XBaseAdapter<HelpCustomerGo
     public HelpCustomerGoodsDetailsAdapter(Context context) {
         super(context);
     }
-
+    private ItemButtonClickListener listener;
     @Override
     protected int getLayoutResId(int viewType) {
         return R.layout.help_customer_goods_details_adapter;
     }
 
+    public void setItemButtonClickListener(ItemButtonClickListener listener){
+        this.listener = listener;
+    }
 
     @Override
     protected void convert(XBaseViewHolder helper, HelpCustomerGoodsDetailsRes item) {
@@ -39,30 +42,31 @@ public class HelpCustomerGoodsDetailsAdapter extends XBaseAdapter<HelpCustomerGo
 
         numberEt.setText(item.getBuy_number()+"");
 
-        subtractButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int number = item.getBuy_number();
-                if(number == 0){
-                    return;
-                }else {
-                    number = number-1;
-                    item.setBuy_number(number);
-                    numberEt.setText(number+"");
-                }
-            }
-        });
-
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int number = item.getBuy_number();
-                number = number+1;
+        subtractButton.setOnClickListener(view ->{
+            int number = item.getBuy_number();
+            if(number == 0){
+                return;
+            }else {
+                number = number-1;
                 item.setBuy_number(number);
                 numberEt.setText(number+"");
             }
+            listener.subtractClick(item);
+        });
+
+        addButton.setOnClickListener(view -> {
+            int number = item.getBuy_number();
+            number = number+1;
+            item.setBuy_number(number);
+            numberEt.setText(number+"");
+            listener.addClick(item);
         });
 
 
+    }
+
+    public interface ItemButtonClickListener{
+        void subtractClick(HelpCustomerGoodsDetailsRes item);
+        void addClick(HelpCustomerGoodsDetailsRes item);
     }
 }

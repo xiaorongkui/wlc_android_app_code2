@@ -157,5 +157,9 @@ public class MainActivity extends BaseActivity {
         if (systemSettingTv != null) {
             systemSettingTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, SystemSettingActivity.class));
         }
+        View messageTv = findViewById(R.id.message_tv);
+        if(messageTv != null){
+            messageTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, MessageCenterActivity.class));
+        }
     }
 }

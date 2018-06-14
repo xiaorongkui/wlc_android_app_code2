@@ -1,8 +1,5 @@
 package com.qmkj.wlc.ui.activity;
 
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,6 +11,7 @@ import com.qmkj.wlc.ui.adapter.AreaLocationManageAdapter;
 import com.qmkj.wlc.ui.adapter.AreaManageAdapter;
 import com.qmkj.wlc.ui.dialog.AddAreaButtonDialog;
 import com.qmkj.wlc.ui.dialog.AddAreaLocationButtonDialog;
+import com.qmkj.wlc.ui.view.XRecyclerView;
 import com.qmkj.wlc.utils.ToastUtil;
 
 import butterknife.BindView;
@@ -28,10 +26,10 @@ import butterknife.OnClick;
 public class AreaManagementActivity extends BaseActivity {
     //位置管理
     @BindView(R.id.area_location_manage_recyclerView)
-    RecyclerView locationRecycleView;
+    XRecyclerView locationRecycleView;
     //区域管理
     @BindView(R.id.area_manage_recyclerView)
-    RecyclerView areaRecycleView;
+    XRecyclerView areaRecycleView;
 
     //添加区域
     @BindView(R.id.area_add_btn)
@@ -64,12 +62,7 @@ public class AreaManagementActivity extends BaseActivity {
         areaAdapter.addData(new AreaManageRes());
         areaAdapter.addData(new AreaManageRes());
         areaAdapter.addData(new AreaManageRes());
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        areaRecycleView.setLayoutManager(layoutManager);
         areaRecycleView.setAdapter(areaAdapter);
-        //添加分割线
-        areaRecycleView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
         //初始化位置管理
         locationAdapter = new AreaLocationManageAdapter(mContext);
@@ -78,12 +71,7 @@ public class AreaManagementActivity extends BaseActivity {
         locationAdapter.addData(new AreaLocationManageRes());
         locationAdapter.addData(new AreaLocationManageRes());
         locationAdapter.addData(new AreaLocationManageRes());
-        LinearLayoutManager layoutManager2 = new LinearLayoutManager(mContext);
-        layoutManager2.setOrientation(LinearLayoutManager.VERTICAL);
-        locationRecycleView.setLayoutManager(layoutManager2);
         locationRecycleView.setAdapter(locationAdapter);
-        //添加分割线
-        locationRecycleView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
     }
 

@@ -1,8 +1,5 @@
 package com.qmkj.wlc.ui.activity;
 
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.qmkj.wlc.R;
@@ -11,6 +8,7 @@ import com.qmkj.wlc.model.CustomerOrderRes;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
 import com.qmkj.wlc.ui.adapter.CustomerOrderAdapter;
 import com.qmkj.wlc.ui.adapter.CustomerOrderDetailsAdapter;
+import com.qmkj.wlc.ui.view.XRecyclerView;
 import com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout;
 
 import butterknife.BindView;
@@ -25,13 +23,12 @@ public class CustomerOrderActivity extends BaseActivity {
     @BindView(R.id.customer_order_refreshLayout)
     XRefreshLayout refreshLayout;
     @BindView(R.id.customer_order_recyclerView)
-    RecyclerView orderRecyclerView;
+    XRecyclerView orderRecyclerView;
     @BindView(R.id.customer_order_details_recyclerView)
-    RecyclerView detailsRecyclerView;
+    XRecyclerView detailsRecyclerView;
     private CustomerOrderAdapter adapterOrder;
     private CustomerOrderDetailsAdapter adaptedDetails;
 
-    boolean mIsCanRefresh = true;
     boolean mIsLoadMore;
     int mPage;
 
@@ -48,13 +45,7 @@ public class CustomerOrderActivity extends BaseActivity {
     @Override
     protected void initView() {
         adapterOrder = new CustomerOrderAdapter(mContext);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        orderRecyclerView.setLayoutManager(layoutManager);
         orderRecyclerView.setAdapter(adapterOrder);
-        //添加分割线
-        orderRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
         adapterOrder.addData(new CustomerOrderRes());
         adapterOrder.addData(new CustomerOrderRes());
         adapterOrder.addData(new CustomerOrderRes());
@@ -73,47 +64,23 @@ public class CustomerOrderActivity extends BaseActivity {
 
             @Override
             public boolean checkCanDoRefresh(View content, View header) {
-                return mIsCanRefresh;
+                if(orderRecyclerView!=null){
+                    return orderRecyclerView.isCanRefresh();
+                }
+                return true;
             }
         });
-
-        //设置滑动监听
-        orderRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                int topRowVerticalPosition =
-                        (recyclerView == null || recyclerView.getChildCount() == 0) ? 0 : recyclerView.getChildAt(0)
-                                .getTop();
-                mIsCanRefresh = topRowVerticalPosition >= 0;
-            }
-
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-        });
-
         //设置上拉加载更多监听
         adapterOrder.setOnLoadMoreListener(() -> {
             mIsLoadMore = true;
             getDataFromNet();
         }, orderRecyclerView);
 
-
-
         adaptedDetails = new CustomerOrderDetailsAdapter(mContext);
         adaptedDetails.addData(new CustomerOrderDetailsRes());
         adaptedDetails.addData(new CustomerOrderDetailsRes());
         adaptedDetails.addData(new CustomerOrderDetailsRes());
-        LinearLayoutManager layoutManager_details = new LinearLayoutManager(mContext);
-        layoutManager_details.setOrientation(LinearLayoutManager.VERTICAL);
-        detailsRecyclerView.setLayoutManager(layoutManager_details);
         detailsRecyclerView.setAdapter(adaptedDetails);
-        //添加分割线
-        detailsRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
-
-
     }
 
     @Override

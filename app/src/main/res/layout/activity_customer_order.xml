@@ -20,7 +20,7 @@
             android:layout_height="match_parent">
 
 
-            <android.support.v7.widget.RecyclerView
+            <com.qmkj.wlc.ui.view.XRecyclerView
                 android:id="@+id/customer_order_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
@@ -43,7 +43,7 @@
 
             <View style="@style/line_h"/>
 
-            <android.support.v7.widget.RecyclerView
+            <com.qmkj.wlc.ui.view.XRecyclerView
                 android:id="@+id/customer_order_details_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

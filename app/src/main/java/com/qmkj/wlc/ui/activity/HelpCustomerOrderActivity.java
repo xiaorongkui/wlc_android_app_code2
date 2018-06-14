@@ -1,6 +1,5 @@
 package com.qmkj.wlc.ui.activity;
 
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,6 +13,7 @@ import com.qmkj.wlc.ui.activity.base.BaseActivity;
 import com.qmkj.wlc.ui.adapter.HelpCustomerGoodsDetailsAdapter;
 import com.qmkj.wlc.ui.adapter.HelpCustomerGoodsNumberAdapter;
 import com.qmkj.wlc.ui.adapter.HelpCustomerGoodsTypeAdapter;
+import com.qmkj.wlc.ui.view.XRecyclerView;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class HelpCustomerOrderActivity extends BaseActivity {
     RecyclerView orderNameRecycle;
     //商品信息类别
     @BindView(R.id.help_customer_goods_type)
-    RecyclerView goodsType;
+    XRecyclerView goodsType;
     //商品信息类别中商品列表
     @BindView(R.id.help_customer_goods_details)
     RecyclerView goodsDetails;
@@ -40,15 +40,12 @@ public class HelpCustomerOrderActivity extends BaseActivity {
     //当前选择类别
     private int select_position =0;
 
-
     ArrayList<HelpCustomerGoodsDetailsRes> list_custom = new ArrayList<>();//定制产品
     ArrayList<HelpCustomerGoodsDetailsRes> list_grade = new ArrayList<>(); //高档产品
     ArrayList<HelpCustomerGoodsDetailsRes> list_normal = new ArrayList<>();//普通产品
     ArrayList<HelpCustomerGoodsDetailsRes> list_faster = new ArrayList<>();//快餐区
     ArrayList<HelpCustomerGoodsDetailsRes> list_water = new ArrayList<>();//酒水
     ArrayList<HelpCustomerGoodsDetailsRes> list_gift = new ArrayList<>();//赠送区
-
-
 
     @Override
     protected void initTitle() {
@@ -71,13 +68,7 @@ public class HelpCustomerOrderActivity extends BaseActivity {
         goodsTypeAdapter.addData(new HelpCustomerGoodsTypeBean("快餐区",false));
         goodsTypeAdapter.addData(new HelpCustomerGoodsTypeBean("酒水",false));
         goodsTypeAdapter.addData(new HelpCustomerGoodsTypeBean("赠送区",false));
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        goodsType.setLayoutManager(layoutManager);
         goodsType.setAdapter(goodsTypeAdapter);
-        //添加分割线
-        goodsType.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
         goodsTypeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -88,8 +79,6 @@ public class HelpCustomerOrderActivity extends BaseActivity {
                 goodsTypeAdapter.getData().get(position).setSelect(true);
                 select_position = position;
                 goodsTypeAdapter.notifyDataSetChanged();
-
-
                 switch (position){
                     case 0:
                         goodsDetailsAdapter.setNewData(list_custom);
@@ -114,29 +103,22 @@ public class HelpCustomerOrderActivity extends BaseActivity {
             }
         });
 
-
-
         //设置商品详情数据
         goodsDetailsAdapter = new HelpCustomerGoodsDetailsAdapter(mContext);
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(mContext);
         layoutManager2.setOrientation(LinearLayoutManager.VERTICAL);
         goodsDetails.setLayoutManager(layoutManager2);
         goodsDetails.setAdapter(goodsDetailsAdapter);
-        goodsDetailsAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+        goodsDetailsAdapter.setItemButtonClickListener(new HelpCustomerGoodsDetailsAdapter.ItemButtonClickListener() {
             @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (view.getId()){
-                    case R.id.help_customer_goods_details_subtract_btn: //减
+            public void subtractClick(HelpCustomerGoodsDetailsRes item) {
 
-                        break;
-                    case R.id.help_customer_goods_details_add_btn: //加
+            }
+            @Override
+            public void addClick(HelpCustomerGoodsDetailsRes item) {
 
-                        break;
-                }
             }
         });
-
-
 
         //设置购买商品数据
         goodsNumberAdapter = new HelpCustomerGoodsNumberAdapter(mContext);
