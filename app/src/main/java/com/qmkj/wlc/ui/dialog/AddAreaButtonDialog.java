@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.qmkj.wlc.R;
-import com.qmkj.wlc.ui.dialog.base.BaseDialog;
+import com.qmkj.wlc.ui.dialog.base.BaseButtonDialog;
 
 /**
  * 创建日期：2018/6/13
@@ -14,7 +14,7 @@ import com.qmkj.wlc.ui.dialog.base.BaseDialog;
  * 文件名称： 新增区域弹出框
  * email: 380948730@qq.com
  */
-public class AddAreaDialog extends BaseDialog {
+public class AddAreaButtonDialog extends BaseButtonDialog {
     private EditText areaNameEdt;
     private OnAddAreaListener onAddAreaListener;
 
@@ -26,7 +26,7 @@ public class AddAreaDialog extends BaseDialog {
         void onAddArea(String areaName);
     }
 
-    public AddAreaDialog(Context context) {
+    public AddAreaButtonDialog(Context context) {
         super(context);
     }
 

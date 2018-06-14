@@ -1,124 +1,114 @@
 package com.qmkj.wlc.ui.dialog.base;
 
-
+import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-
-import com.qmkj.wlc.R;
+import android.view.WindowManager;
 
 
-/**
- * Created by Yun on 2018/1/7.
- * base dialog
- */
-public abstract class BaseDialog extends Dialog {
+public class BaseDialog extends Dialog {
+    Activity activity;
+    private final View mView;
 
-    protected TextView tvTitle;
-    private FrameLayout flContent;
-    protected Button btnNegative;
-    protected Button btnPositive;
-    protected View btnButton;
-    private OnNegativeButtonClickListener onNegativeButtonClickListener;
-    private OnPositiveButtonClickListener onPositiveButtonClickListener;
-
-    protected String titleStr;
-    protected String positiveButtonStr;
-    protected String negativeButtonStr;
-    private View contentView;
-
-
-    public interface OnNegativeButtonClickListener {
-        void onClick(Dialog dialog, View view);
+    public BaseDialog(Activity context, int theme, int layoutResId) {
+        super(context, theme);
+        this.activity = context;
+        mView = LayoutInflater.from(getContext()).inflate(layoutResId, null);
+        setContentView(mView);
+        super.setContentView(mView);
     }
 
-    public interface OnPositiveButtonClickListener {
-        void onClick(Dialog dialog, View view);
+    public <T extends View> T getView(int viewId, Class<T> clazz) {
+        return (T) mView.findViewById(viewId);
     }
 
-    public void setOnNegativeButtonClickListener(OnNegativeButtonClickListener onNegativeButtonClickListener) {
-        this.onNegativeButtonClickListener = onNegativeButtonClickListener;
-    }
-
-    public void setOnPositiveButtonClickListener(OnPositiveButtonClickListener onPositiveButtonClickListener) {
-        this.onPositiveButtonClickListener = onPositiveButtonClickListener;
-    }
-
-    public void setTitleText(String titleStr) {
-        this.titleStr = titleStr;
-    }
-
-
-    public void setPositiveButtonText(String positiveButtonStr) {
-        this.positiveButtonStr = positiveButtonStr;
-    }
-
-    public void setNegativeButtonText(String negativeButtonStr) {
-        this.negativeButtonStr = negativeButtonStr;
-    }
-
-    protected abstract View setContentView();
-
-    protected abstract void initContentView(View contentView);
-
-    public BaseDialog(Context context) {
-        super(context);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Window window = getWindow();
-        if (window != null) {
-            window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    public void setAlertDialogSize(int width, int height) {
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        if (getWindow() != null) {
+            lp.copyFrom(getWindow().getAttributes());
+            lp.width = width;
+            lp.height = height;
+            getWindow().setAttributes(lp);
         }
-        setTitle(null);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.dialog_base);
-        setCanceledOnTouchOutside(false);
-        setCancelable(false);
-        initView();
     }
 
-    private void initView() {
-        contentView = setContentView();
-        tvTitle = findViewById(R.id.tv_title);
-        flContent = findViewById(R.id.fl_content);
-        btnNegative = findViewById(R.id.btn_negative);
-        btnPositive = findViewById(R.id.btn_positive);
-        btnButton = findViewById(R.id.button_btn);
-        btnNegative.setOnClickListener(v -> {
-            if (onNegativeButtonClickListener != null) {
-                onNegativeButtonClickListener.onClick(this, v);
+    /**
+     * @param width 对话框的宽度
+     */
+    public void setAlertDialogWidth(int width) {
+//        final WindowManager.LayoutParams attrs = getWindow().getAttributes();
+//        getWindow().setLayout(width, attrs.height);
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        if (getWindow() != null) {
+            lp.copyFrom(getWindow().getAttributes());
+            lp.width = width;
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            getWindow().setAttributes(lp);
+        }
+    }
+
+    /**
+     * @param height 对话框的高度
+     */
+    public void setAlertDialogHight(int height) {
+        if (height <= 0) {
+            WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+            if (getWindow() != null) {
+                lp.copyFrom(getWindow().getAttributes());
+                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                getWindow().setAttributes(lp);
             }
-            dismiss();
-        });
-
-        btnPositive.setOnClickListener(v -> {
-            if (onPositiveButtonClickListener != null) {
-                onPositiveButtonClickListener.onClick(this, v);
+        } else {
+            if (getWindow() != null) {
+                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                lp.copyFrom(getWindow().getAttributes());
+                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                lp.height = height;
+                getWindow().setAttributes(lp);
             }
-        });
-        initContentView(contentView);
-        if (titleStr != null && !titleStr.equals("")) {
-            tvTitle.setText(titleStr);
         }
-        if (positiveButtonStr != null && !positiveButtonStr.equals("")) {
-            btnPositive.setText(positiveButtonStr);
+    }
+
+    /**
+     * @param gravity 对话框的位置 Gravity.BOTTOM
+     */
+    public void setAlertDialogGravity(int gravity) {
+        //定义宽度
+        if (getWindow() != null) {
+            final WindowManager.LayoutParams attrs = getWindow().getAttributes();
+            attrs.gravity = gravity;
+            getWindow().setAttributes(attrs);
         }
-        if (negativeButtonStr != null && !negativeButtonStr.equals("")) {
-            btnNegative.setText(negativeButtonStr);
-        }
-        if (contentView != null) {
-            flContent.removeAllViews();
-            flContent.addView(contentView);
+    }
+
+    /**
+     * 关闭对话框
+     */
+    public void dismiss() {
+        super.dismiss();
+        WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+        lp.alpha = 1.0f;
+        lp.dimAmount = 1.0f;
+        activity.getWindow().setAttributes(lp);
+        activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+    }
+
+    public void show() {
+        WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+        lp.alpha = 0.5f;
+        lp.dimAmount = 0.5f;
+        activity.getWindow().setAttributes(lp);
+        activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        super.show();
+    }
+
+    public void setAnimation(int style) {
+        Window w = getWindow();
+        if (w != null) {
+            w.setWindowAnimations(style);
         }
     }
 

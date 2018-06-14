@@ -12,8 +12,8 @@ import com.qmkj.wlc.model.AreaManageRes;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
 import com.qmkj.wlc.ui.adapter.AreaLocationManageAdapter;
 import com.qmkj.wlc.ui.adapter.AreaManageAdapter;
-import com.qmkj.wlc.ui.dialog.AddAreaDialog;
-import com.qmkj.wlc.ui.dialog.AddAreaLocationDialog;
+import com.qmkj.wlc.ui.dialog.AddAreaButtonDialog;
+import com.qmkj.wlc.ui.dialog.AddAreaLocationButtonDialog;
 import com.qmkj.wlc.utils.ToastUtil;
 
 import butterknife.BindView;
@@ -92,7 +92,7 @@ public class AreaManagementActivity extends BaseActivity {
         switch (view.getId()){
             case R.id.area_add_btn: //添加区域
 
-                AddAreaDialog areaDialog = new AddAreaDialog(mContext);
+                AddAreaButtonDialog areaDialog = new AddAreaButtonDialog(mContext);
                 areaDialog.setOnAddAreaListener((areaName) ->{
                     ToastUtil.showShort("新增区域！");
                 });
@@ -102,7 +102,7 @@ public class AreaManagementActivity extends BaseActivity {
 
             case R.id.area_location_add_btn://添加位置
 
-                AddAreaLocationDialog locationDialog = new AddAreaLocationDialog(mContext);
+                AddAreaLocationButtonDialog locationDialog = new AddAreaLocationButtonDialog(mContext);
                 locationDialog.setOnAddAreaLocationListener((locationName,personAmount) ->{
                     ToastUtil.showShort("新增位置！");
                 });

@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.qmkj.wlc.R;
-import com.qmkj.wlc.ui.dialog.base.BaseDialog;
+import com.qmkj.wlc.ui.dialog.base.BaseButtonDialog;
 
 
 /**
@@ -15,7 +15,7 @@ import com.qmkj.wlc.ui.dialog.base.BaseDialog;
  * 文件名称： 新增区域位置弹出框
  * email: 380948730@qq.com
  */
-public class AddAreaLocationDialog extends BaseDialog {
+public class AddAreaLocationButtonDialog extends BaseButtonDialog {
     private EditText areNameEdt;//选择区域
     private EditText locationNameEdt;//名称
     private EditText personAmountEdt;//可容纳人数
@@ -29,7 +29,7 @@ public class AddAreaLocationDialog extends BaseDialog {
         void onAddArea(String locationName,String personName);
     }
 
-    public AddAreaLocationDialog(Context context) {
+    public AddAreaLocationButtonDialog(Context context) {
         super(context);
     }
 
