@@ -59,6 +59,7 @@
                 android:textSize="@dimen/text_size_24"/>
 
             <TextView
+                android:id="@+id/login_out_tv"
                 android:layout_width="@dimen/x300"
                 android:layout_height="@dimen/y60"
                 android:layout_marginTop="@dimen/y40"

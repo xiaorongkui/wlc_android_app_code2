@@ -20,7 +20,6 @@ public interface Constants {
      */
     String DB_NAME = PROJECT + ".db";
 
-
     String KEY_BASE_URL = "key_base_url";
     /**
      * 服务器地址

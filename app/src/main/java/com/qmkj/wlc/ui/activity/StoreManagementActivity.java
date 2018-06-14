@@ -45,13 +45,13 @@ public class StoreManagementActivity extends BaseActivity {
     List<String> managementData = new ArrayList<>();
 
     private void initGridView() {
-        managementData.add("慈善捐赠");
-        managementData.add("商品管理");
-        managementData.add("总部订单");
-        managementData.add("系统公告");
-        managementData.add("区域管理");
-        managementData.add("店员管理");
-        managementData.add("个人信息");
+        managementData.add(getString(R.string.charitable_donation));
+        managementData.add(getString(R.string.commodity_management));
+        managementData.add(getString(R.string.headquarters_order));
+        managementData.add(getString(R.string.system_notice));
+        managementData.add(getString(R.string.regional_management));
+        managementData.add(getString(R.string.shop_assistant_management));
+        managementData.add(getString(R.string.person_info));
         StoreManagementGrideAdapter storeManagementGrideAdapter = new StoreManagementGrideAdapter(mContext, R.layout
                 .store_management_gv_item_, managementData);
         storeManagementGv.setAdapter(storeManagementGrideAdapter);
@@ -85,12 +85,5 @@ public class StoreManagementActivity extends BaseActivity {
     @Override
     protected void initData() {
 
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
     }
 }

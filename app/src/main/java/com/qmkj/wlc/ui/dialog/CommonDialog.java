@@ -10,4 +10,6 @@ public class CommonDialog extends BaseDialog {
     public CommonDialog(@NonNull Activity context, int theme, int layoutResId) {
         super(context, theme, layoutResId);
     }
+
+
 }

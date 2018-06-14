@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.model.CommodityManagerLeftModel;
 import com.qmkj.wlc.model.HeadquartersOrderListModel;
@@ -44,9 +45,10 @@ public class HeadquartersOrderActivity extends BaseActivity {
     private boolean isCanRefresh;
     private HeadquartersOrderRecyAdapter headquartersOrderRecyAdapter;
     private boolean mIsLoadMore;
-    private int productAmount = 0;
     private HeadquartersOrderSelectRecyAdapter headquartersOrderSelectRecyAdapter;
     private boolean isSelectProductExist;
+    private boolean isAdd;
+    private int productAmount = 0;
 
     @Override
     protected void initTitle() {
@@ -84,12 +86,12 @@ public class HeadquartersOrderActivity extends BaseActivity {
         commodityManagerLeftRecyAdapter.setOnItemClickListener((adapter, view, position) -> {
 
         });
-        leftDataList.add(new CommodityManagerLeftModel("定制产品"));
-        leftDataList.add(new CommodityManagerLeftModel("高档产品"));
-        leftDataList.add(new CommodityManagerLeftModel("普通产品"));
-        leftDataList.add(new CommodityManagerLeftModel("快餐区"));
-        leftDataList.add(new CommodityManagerLeftModel("酒水"));
-        leftDataList.add(new CommodityManagerLeftModel("赠送区"));
+        leftDataList.add(new CommodityManagerLeftModel(getString(R.string.custom_product)));
+        leftDataList.add(new CommodityManagerLeftModel(getString(R.string.high_grade_products)));
+        leftDataList.add(new CommodityManagerLeftModel(getString(R.string.common_product)));
+        leftDataList.add(new CommodityManagerLeftModel(getString(R.string.fast_food_area)));
+        leftDataList.add(new CommodityManagerLeftModel(getString(R.string.wine)));
+        leftDataList.add(new CommodityManagerLeftModel(getString(R.string.gift_area)));
         commodityManagerLeftRecyAdapter.update(leftDataList);
 
         //中间的产品列表
@@ -101,40 +103,13 @@ public class HeadquartersOrderActivity extends BaseActivity {
         headquartersOrderRecyAdapter.setOnItemChildClickListener((adapter, view, position) -> {
             switch (view.getId()) {
                 case R.id.minus_sign_tv://减产品
-                    if (productAmount > 0) {
-                        productAmount--;
-                    }
+                    isAdd = false;
                     break;
                 case R.id.plus_tv://加产品
-                    productAmount++;
+                    isAdd = true;
                     break;
             }
-            TextView productAmountTv = (TextView) adapter.getViewByPosition(position, R.id.product_amount_tv);
-            if (productAmountTv != null) {
-                productAmountTv.setText(String.format("%s", productAmount));
-            }
-            if (rightSelectDataList.size() > 0) {
-                String listProductName = rightDataList.get(position).getName();
-                for (int i = 0; i < rightSelectDataList.size(); i++) {
-                    String listSelectProductName = rightSelectDataList.get(i).getName();
-                    if (!TextUtils.isEmpty(listSelectProductName) && listSelectProductName.equals(listProductName)) {
-                        isSelectProductExist = true;
-                        if (productAmount > 0) {
-                            rightSelectDataList.set(i, new HeadquartersOrderListModel(listProductName, productAmount));
-                        } else {
-                            rightSelectDataList.remove(i);
-                        }
-                    }
-                }
-                if (!isSelectProductExist) {
-                    isSelectProductExist = false;
-                    rightSelectDataList.add(new HeadquartersOrderListModel(listProductName, productAmount));
-                }
-            } else {
-                if (productAmount > 0) rightSelectDataList.add(new HeadquartersOrderListModel("", productAmount));
-            }
-            headquartersOrderSelectRecyAdapter.update(rightSelectDataList);
-
+            calculateSelectProduct(adapter, position);
         });
         for (int i = 0; i < 10; i++) {
             rightDataList.add(new HeadquartersOrderListModel("产品" + i, 0));
@@ -151,8 +126,49 @@ public class HeadquartersOrderActivity extends BaseActivity {
         headquartersOrderSelectRecyAdapter.update(rightSelectDataList);
     }
 
-    private void initRefresh() {
+    //计算右边选中的产品列表，数量
+    private void calculateSelectProduct(BaseQuickAdapter adapter, int position) {
+        String listProductName = rightDataList.get(position).getName();
+        if (rightSelectDataList.size() > 0) {
+            for (int i = 0; i < rightSelectDataList.size(); i++) {
+                String listSelectProductName = rightSelectDataList.get(i).getName();
+                if (!TextUtils.isEmpty(listSelectProductName) && listSelectProductName.equals(listProductName)) {
+                    isSelectProductExist = true;
+                    productAmount = rightSelectDataList.get(i).getAmount();
+                    productAmount = isAdd ? ++productAmount : --productAmount;
+                    if (productAmount > 0) {
+                        rightSelectDataList.set(i, new HeadquartersOrderListModel(listProductName, productAmount));
+                    } else {
+                        rightSelectDataList.remove(i);
+                    }
+                }
+            }
+            if (!isSelectProductExist) {//商品不存在
+                if (isAdd) {
+                    rightSelectDataList.add(new HeadquartersOrderListModel(listProductName, 1));
+                    productAmount = 1;
+                } else {
+                    productAmount = 0;
+                }
+            }
+        } else {
+            if (isAdd) {
+                rightSelectDataList.add(new HeadquartersOrderListModel(listProductName, 1));
+                productAmount = 1;
+            } else {
+                productAmount = 0;
+            }
+        }
 
+        TextView productAmountTv = (TextView) adapter.getViewByPosition(position, R.id.product_amount_tv);
+        if (productAmountTv != null) {
+            productAmountTv.setText(String.format("%s", productAmount));
+        }
+        isSelectProductExist = false;
+        headquartersOrderSelectRecyAdapter.update(rightSelectDataList);
+    }
+
+    private void initRefresh() {
         productListXrl.setOnRefreshListener(new XRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -183,6 +199,5 @@ public class HeadquartersOrderActivity extends BaseActivity {
         headquartersOrderRecyAdapter.setOnLoadMoreListener(() -> {
             mIsLoadMore = true;
         }, productListRv);
-
     }
 }
