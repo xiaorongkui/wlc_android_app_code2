@@ -9,7 +9,8 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:focusable="true">
+        android:focusable="true"
+        android:visibility="invisible">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/charitable_donation_rv"
@@ -31,198 +32,189 @@
         android:layout_weight="1"
         android:overScrollMode="never"
         android:scrollbars="none"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/x15"
-            android:layout_marginStart="@dimen/x15"
-            android:orientation="vertical">
+            android:background="@color/color_white_1"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/x24"
+            android:paddingStart="@dimen/x24">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/y50"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:text="@string/charitable_donation"
-                android:textSize="@dimen/text_size_18"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/y16"
+                android:layout_marginTop="@dimen/y16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/charitable_donation"
+                    android:textColor="@color/color_black_7"
+                    android:textSize="@dimen/text_size_18"/>
+
+                <ImageView
+                    android:layout_width="@dimen/x24"
+                    android:layout_height="@dimen/y24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_launcher"/>
+            </RelativeLayout>
+
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/y1"
                 android:background="@color/textGray"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y21"
+                android:text="@string/charitable_donation_info"
+                android:textColor="@color/color_black_8"
+                android:textSize="@dimen/text_size_20"/>
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y10"
+                android:layout_height="@dimen/y44"
+                android:layout_marginTop="@dimen/y12"
+                android:background="@drawable/shape_edit"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/y10"
+                    android:layout_marginStart="@dimen/x16"
                     android:text="@string/donation_program"
                     android:textSize="@dimen/text_size_18"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginStart="@dimen/y150"
-                    android:layout_marginTop="@dimen/y10"
                     android:text="[类别]项目名称"
                     android:textSize="@dimen/text_size_18"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y10"
+                android:layout_height="@dimen/y44"
+                android:layout_marginTop="@dimen/y12"
+                android:background="@drawable/shape_edit"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/x16"
                     android:text="@string/donation_money"
                     android:textSize="@dimen/text_size_18"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <EditText
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/y150"
-                    android:background="@drawable/shape_edit"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginStart="@dimen/x10"
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:hint="@string/donation_money_notice"
-                        android:inputType="numberDecimal"
-                        android:maxLines="1"
-                        android:textCursorDrawable="@null"
-                        android:textSize="@dimen/text_size_18"/>
-
-                    <ImageView
-                        android:layout_width="@dimen/y20"
-                        android:layout_height="@dimen/y20"
-                        android:src="@mipmap/ic_launcher"/>
-                </LinearLayout>
-
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="end"
+                    android:hint="@string/donation_money_notice"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_size_18"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y10"
+                android:layout_height="@dimen/y44"
+                android:layout_marginTop="@dimen/y12"
+                android:background="@drawable/shape_edit"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/x16"
                     android:text="@string/donation_account"
                     android:textSize="@dimen/text_size_18"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <EditText
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/y150"
-                    android:background="@drawable/shape_edit"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginStart="@dimen/x10"
-                        android:background="@null"
-                        android:hint="@string/donation_account_notice"
-                        android:maxLines="1"
-                        android:textCursorDrawable="@null"
-                        android:textSize="@dimen/text_size_18"/>
-                </LinearLayout>
-
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/x10"
+                    android:background="@null"
+                    android:gravity="end"
+                    android:hint="@string/donation_account_notice"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_size_18"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y10"
+                android:layout_height="@dimen/y44"
+                android:layout_marginTop="@dimen/y12"
+                android:background="@drawable/shape_edit"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/x16"
                     android:text="@string/donation_person"
                     android:textSize="@dimen/text_size_18"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <EditText
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/y150"
-                    android:background="@drawable/shape_edit"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginStart="@dimen/x10"
-                        android:background="@null"
-                        android:hint="@string/donation_name_notice"
-                        android:maxLength="200"
-                        android:maxLines="1"
-                        android:textCursorDrawable="@null"
-                        android:textSize="@dimen/text_size_18"/>
-                </LinearLayout>
-
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/x10"
+                    android:background="@null"
+                    android:gravity="end"
+                    android:hint="@string/donation_name_notice"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_size_18"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y10"
+                android:layout_height="@dimen/y44"
+                android:layout_marginTop="@dimen/y12"
+                android:background="@drawable/shape_edit"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <TextView
+                <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:layout_gravity="center_horizontal"
-                    android:text="@string/mark"
+                    android:layout_marginStart="@dimen/x10"
+                    android:background="@null"
+                    android:hint="@string/donation_mark_notice"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@null"
                     android:textSize="@dimen/text_size_18"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/y150"
-                    android:background="@drawable/shape_edit"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/y100"
-                        android:layout_marginStart="@dimen/x10"
-                        android:background="@null"
-                        android:gravity="start"
-                        android:hint="@string/donation_mark_notice"
-                        android:maxLines="4"
-                        android:textCursorDrawable="@null"
-                        android:textSize="@dimen/text_size_18"/>
-
-                </LinearLayout>
-
             </RelativeLayout>
 
             <TextView

@@ -9,6 +9,7 @@
 
     <color name="textBlack">@color/black</color>
     <color name="textGray">#E9F0F5</color>
+    <color name="textGray_1">#F5F7FB</color>
 
     <color name="color_black_1">#35394F</color>
     <color name="color_black_2">#ff1b2027</color>
@@ -16,6 +17,8 @@
     <color name="color_black_4">#3A3F45</color>
     <color name="color_black_5">#ff242b34</color>
     <color name="color_black_6">#ff919ca9</color>
+    <color name="color_black_7">#242B34</color>
+    <color name="color_black_8">#1B2027</color>
 
 
     <color name="color_bule_1">#37A7FF</color>
