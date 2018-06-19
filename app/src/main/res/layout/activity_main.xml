@@ -1,99 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
 
     <include layout="@layout/common_header"/>
 
+    <ImageView
+        android:layout_width="@dimen/x274"
+        android:layout_height="@dimen/y150"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y64"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y180"
-        android:layout_marginEnd="@dimen/y10"
-        android:layout_marginStart="@dimen/x10"
-        android:layout_marginTop="@dimen/y100"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/y56"
+        android:layout_marginStart="@dimen/x56"
+        android:layout_marginTop="@dimen/y64"
         android:orientation="horizontal">
 
-        <RelativeLayout
-            android:id="@+id/charitable_donation_rl"
+        <android.support.v7.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/shape_home_item">
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="true"
+            app:cardCornerRadius="@dimen/x5"
+            app:cardElevation="@dimen/x5">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="慈善捐赠"
-                android:textSize="@dimen/text_size_30"/>
-        </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/charitable_donation_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_home_item"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/customer_reservation_rl"
+                <ImageView
+                    android:layout_width="@dimen/x88"
+                    android:layout_height="@dimen/y88"
+                    android:layout_marginTop="@dimen/y48"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y36"
+                    android:text="@string/charitable_donation"
+                    android:textColor="@color/color_black_2"
+                    android:textSize="@dimen/text_size_24"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y2"
+                    android:layout_marginEnd="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
+                    android:layout_marginTop="@dimen/y24"
+                    android:background="@color/textGray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/y24"
+                    android:layout_marginTop="@dimen/y36"
+                    android:text="@string/charitable_donation_english"
+                    android:textColor="@color/color_black_3"
+                    android:textSize="@dimen/text_size_13"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/x20"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="true"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x56"
             android:layout_weight="1"
-            android:background="@drawable/shape_home_item">
+            app:cardCornerRadius="@dimen/x5"
+            app:cardElevation="@dimen/x5">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="客户预约"
-                android:textSize="@dimen/text_size_30"/>
-        </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/customer_reservation_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_home_item"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/guest_order_rl"
+                <ImageView
+                    android:layout_width="@dimen/x88"
+                    android:layout_height="@dimen/y88"
+                    android:layout_marginTop="@dimen/y48"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y36"
+                    android:text="@string/customer_reservation"
+                    android:textColor="@color/color_black_2"
+                    android:textSize="@dimen/text_size_24"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y2"
+                    android:layout_marginEnd="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
+                    android:layout_marginTop="@dimen/y24"
+                    android:background="@color/textGray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/y24"
+                    android:layout_marginTop="@dimen/y36"
+                    android:text="@string/customer_reservation_english"
+                    android:textColor="@color/color_black_3"
+                    android:textSize="@dimen/text_size_13"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/x20"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="true"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x56"
             android:layout_weight="1"
-            android:background="@drawable/shape_home_item">
+            app:cardCornerRadius="@dimen/x5"
+            app:cardElevation="@dimen/x5">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="客人订单"
-                android:textSize="@dimen/text_size_30"/>
-        </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/guest_order_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_home_item"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/guest_list_rl"
+                <ImageView
+                    android:layout_width="@dimen/x88"
+                    android:layout_height="@dimen/y88"
+                    android:layout_marginTop="@dimen/y48"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y36"
+                    android:text="@string/guest_order"
+                    android:textColor="@color/color_black_2"
+                    android:textSize="@dimen/text_size_24"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y2"
+                    android:layout_marginEnd="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
+                    android:layout_marginTop="@dimen/y24"
+                    android:background="@color/textGray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/y24"
+                    android:layout_marginTop="@dimen/y36"
+                    android:text="@string/guest_order_english"
+                    android:textColor="@color/color_black_3"
+                    android:textSize="@dimen/text_size_13"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/x20"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="true"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x56"
             android:layout_weight="1"
-            android:background="@drawable/shape_home_item">
+            app:cardCornerRadius="@dimen/x5"
+            app:cardElevation="@dimen/x5">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="助客点单"
-                android:textSize="@dimen/text_size_30"/>
-        </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/guest_list_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_home_item"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x88"
+                    android:layout_height="@dimen/y88"
+                    android:layout_marginTop="@dimen/y48"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y36"
+                    android:text="@string/guest_list"
+                    android:textColor="@color/color_black_2"
+                    android:textSize="@dimen/text_size_24"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y2"
+                    android:layout_marginEnd="@dimen/x20"
+                    android:layout_marginStart="@dimen/x20"
+                    android:layout_marginTop="@dimen/y24"
+                    android:background="@color/textGray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/y24"
+                    android:layout_marginTop="@dimen/y36"
+                    android:text="@string/guest_list_english"
+                    android:textColor="@color/color_black_3"
+                    android:textSize="@dimen/text_size_13"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/y20"
         android:layout_weight="1"/>
 
     <FrameLayout
         android:id="@+id/upMarqueeView_fl"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y54"
-        android:layout_marginLeft="@dimen/x10"
-        android:layout_marginRight="@dimen/x10">
+        android:layout_height="@dimen/y44">
 
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/shape_home_item"/>
+            android:background="@color/color_white_2"/>
 
         <com.qmkj.wlc.ui.view.UPMarqueeView
             android:id="@+id/marquee_home_header_notice"

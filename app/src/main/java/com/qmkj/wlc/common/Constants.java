@@ -27,4 +27,7 @@ public interface Constants {
     String BASE_URL = PreferencesUtils.getString(App.getInstance(), KEY_BASE_URL,
             "xxx");
 
+    //INTENT KEY
+    public static final String INTENT_PARAMETER_1 = "intent_parameter_1";
+    public static final String INTENT_PARAMETER_2 = "intent_parameter_2";
 }

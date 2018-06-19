@@ -81,4 +81,12 @@
     <string name="fast_food_area">快餐区</string>
     <string name="wine">酒水</string>
     <string name="gift_area">赠送区</string>
+    <string name="charitable_donation_english">CHARITABLE DONATION</string>
+    <string name="customer_reservation">客户预约</string>
+    <string name="customer_reservation_english">CUSTOMER RESERVATION</string>
+    <string name="guest_order">客人订单</string>
+    <string name="guest_order_english">GUEST ORDER</string>
+    <string name="guest_list">助客点单</string>
+    <string name="guest_list_english">ORDER THE GUEST</string>
+    <string name="notice_title">【公告】</string>
 </resources>

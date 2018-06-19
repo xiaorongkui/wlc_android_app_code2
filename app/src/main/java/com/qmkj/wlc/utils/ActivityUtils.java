@@ -19,6 +19,13 @@ public class ActivityUtils {
         context.startActivity(new Intent(context, cls));
     }
 
+    public static void startActivity(Context context, Intent intent) {
+        if (!(context instanceof Activity)) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
+        context.startActivity(intent);
+    }
+
     /**
      * 跳转Activity
      *
