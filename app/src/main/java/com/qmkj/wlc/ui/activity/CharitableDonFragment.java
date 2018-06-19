@@ -137,7 +137,6 @@ public class CharitableDonFragment extends BaseFragment {
         payMethodData.add("XT支付");
         payMethodData.add("支付宝支付");
         payMethodData.add("微信支付");
-        payMethodData.add("XX支付");
         payMethodData.add("线下支付");
         CharitableGrideAdapter charitableGrideAdapter = new CharitableGrideAdapter(mContext, R.layout
                 .chartiable_pay_method_gv_item_, payMethodData);
