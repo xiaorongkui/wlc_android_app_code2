@@ -84,15 +84,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void initHeader() {
         View backIv = findViewById(R.id.back_iv);
-        View backTv = findViewById(R.id.back_tv);
-        View messageTv = findViewById(R.id.message_tv);
+        View messageTv = findViewById(R.id.message_iv);
         if (backIv != null) {
             backIv.setOnClickListener(v -> finish());
         }
-        if (backTv != null) {
-            backTv.setOnClickListener(v -> finish());
-        }
-        View storeManagerTv = findViewById(R.id.store_manager_tv);
+
+        View storeManagerTv = findViewById(R.id.store_manager_iv);
         if (storeManagerTv != null) {
             storeManagerTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, StoreManagementActivity
                     .class));

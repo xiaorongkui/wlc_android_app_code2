@@ -29,6 +29,6 @@ public class CharitableRecyAdapter extends XBaseAdapter<CharitableListModel> {
     @Override
     protected void convert(XBaseViewHolder helper, CharitableListModel item) {
         helper.getView(R.id.charitable_donation_ll).setBackgroundColor(ResourcesUtil.getColor(item.isSelect() ? R
-                .color.textGray : R.color.color_white_1));
+                .color.color_white_2 : R.color.color_white_1));
     }
 }

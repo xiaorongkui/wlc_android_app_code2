@@ -2,24 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:gravity="center"
+              android:layout_height="@dimen/y44"
+              android:gravity="center_vertical"
               android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="@dimen/x16"
-        android:layout_height="@dimen/y12"
-        android:layout_marginStart="@dimen/x11"
+        android:scaleType="fitXY"
+        android:layout_width="@dimen/x44"
+        android:layout_height="@dimen/y44"
+        android:layout_marginStart="@dimen/x32"
         android:src="@mipmap/ic_launcher"/>
 
     <TextView
         android:id="@+id/notice_title_type_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/x9"
-        android:text="[公告]"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_size_12"/>
+        android:layout_marginStart="@dimen/x10"
+        android:text="@string/notice_title"
+        android:textColor="@color/color_black_2"
+        android:textSize="@dimen/text_size_14"/>
 
     <TextView
         android:id="@+id/tv_home_header_notice"
@@ -29,17 +30,7 @@
         android:layout_weight="1"
         android:ellipsize="end"
         android:maxLines="1"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_size_12"
-        tools:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/>
-
-    <TextView
-        android:id="@+id/tv_home_header_notice_more"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/x13"
-        android:layout_marginStart="@dimen/x37"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_size_12"
-        tools:text="@string/more"/>
+        android:textColor="@color/color_black_2"
+        android:textSize="@dimen/text_size_14"
+        tools:text="公告标题公告标题公告标题公告标题"/>
 </LinearLayout>

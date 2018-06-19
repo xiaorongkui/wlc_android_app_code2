@@ -1,18 +1,19 @@
 package com.qmkj.wlc.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.qmkj.wlc.R;
+import com.qmkj.wlc.common.Constants;
 import com.qmkj.wlc.ui.activity.base.BaseActivity;
 import com.qmkj.wlc.ui.view.UPMarqueeView;
 import com.qmkj.wlc.utils.ActivityUtils;
 import com.qmkj.wlc.utils.LogUtil;
-import com.qmkj.wlc.utils.ResourcesUtil;
 import com.qmkj.wlc.utils.SystemUtil;
 import com.qmkj.wlc.utils.ToastUtil;
 
@@ -25,14 +26,14 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
     private static final long INTERVAL = 2000;  //2s间隔
-    @BindView(R.id.charitable_donation_rl)
-    RelativeLayout charitableDonationRl;
-    @BindView(R.id.customer_reservation_rl)
-    RelativeLayout customerReservationRl;
-    @BindView(R.id.guest_order_rl)
-    RelativeLayout guestOrderRl;
-    @BindView(R.id.guest_list_rl)
-    RelativeLayout guestListRl;
+    @BindView(R.id.charitable_donation_ll)
+    LinearLayout charitableDonationLl;
+    @BindView(R.id.customer_reservation_ll)
+    LinearLayout customerReservationLl;
+    @BindView(R.id.guest_order_ll)
+    LinearLayout guestOrderLl;
+    @BindView(R.id.guest_list_ll)
+    LinearLayout guestListLl;
     @BindView(R.id.marquee_home_header_notice)
     UPMarqueeView upMarqueeView;
     @BindView(R.id.upMarqueeView_fl)
@@ -47,8 +48,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initTitle() {
         LogUtil.i("MainActivity onCreate,状态栏高度=" + SystemUtil.getAndroidPixHeigth(mContext) + ";\t 分辨率=" +
-                SystemUtil.getAndroidPixWidth(mContext) + ";\t设备信息");
-
+                SystemUtil.getAndroidPixWidth(mContext) + "*" + SystemUtil.getAndroidPixHeigth(mContext) + ";\t设备信息");
     }
 
     @Override
@@ -93,10 +93,8 @@ public class MainActivity extends BaseActivity {
         View itemView = View.inflate(mContext, R.layout.home_notice_item, null);
         TextView mTvNotice = itemView.findViewById(R.id.tv_home_header_notice);
         TextView notice_title_type_tv = itemView.findViewById(R.id.notice_title_type_tv);
-        TextView tv_home_header_notice_more = itemView.findViewById(R.id.tv_home_header_notice_more);
 
         mTvNotice.setText(noticeListBean);
-        tv_home_header_notice_more.setText(ResourcesUtil.getString(R.string.more));
         notice_title_type_tv.setText(String.format("[%s]", noticeListBean));
         itemView.setTag(noticeListBean);
         return itemView;
@@ -128,27 +126,29 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.charitable_donation_rl, R.id.customer_reservation_rl, R.id.guest_order_rl, R.id.guest_list_rl})
+    @OnClick({R.id.charitable_donation_ll, R.id.customer_reservation_ll, R.id.guest_order_ll, R.id.guest_list_ll})
     public void onViewClicked(View view) {
+        Intent intent = new Intent(mContext, MainServiceActivity.class);
         switch (view.getId()) {
-            case R.id.charitable_donation_rl://慈善捐赠
-                ActivityUtils.startActivity(mContext, CharitableDonActivity.class);
+            case R.id.charitable_donation_ll://慈善捐赠
+                intent.putExtra(Constants.INTENT_PARAMETER_1, 0);
                 break;
-            case R.id.customer_reservation_rl://客户预约
-                ActivityUtils.startActivity(mContext, CustomerReservationActivity.class);
+            case R.id.customer_reservation_ll://客户预约
+                intent.putExtra(Constants.INTENT_PARAMETER_1, 1);
                 break;
-            case R.id.guest_order_rl://客人订单
-                ActivityUtils.startActivity(mContext, CustomerOrderActivity.class);
+            case R.id.guest_order_ll://客人订单
+                intent.putExtra(Constants.INTENT_PARAMETER_1, 2);
                 break;
-            case R.id.guest_list_rl://助客点单
-                ActivityUtils.startActivity(mContext, HelpCustomerOrderActivity.class);
+            case R.id.guest_list_ll://助客点单
+                intent.putExtra(Constants.INTENT_PARAMETER_1, 3);
                 break;
         }
+        ActivityUtils.startActivity(mContext, intent);
     }
 
     @Override
     protected void initHeader() {
-        View storeManagerTv = findViewById(R.id.store_manager_tv);
+        View storeManagerTv = findViewById(R.id.store_manager_iv);
         if (storeManagerTv != null) {
             storeManagerTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, StoreManagementActivity
                     .class));
@@ -157,7 +157,7 @@ public class MainActivity extends BaseActivity {
         if (systemSettingTv != null) {
             systemSettingTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, SystemSettingActivity.class));
         }
-        View messageTv = findViewById(R.id.message_tv);
+        View messageTv = findViewById(R.id.message_iv);
         if(messageTv != null){
             messageTv.setOnClickListener(v -> ActivityUtils.startActivity(mContext, MessageCenterActivity.class));
         }
