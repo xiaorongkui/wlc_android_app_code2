@@ -24,7 +24,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        new Handler().postDelayed(() -> ActivityUtils.startActivityAndFinish(mContext, MainActivity.class)
+        new Handler().postDelayed(() -> ActivityUtils.startActivityAndFinish(mContext, LoginActivity.class)
                 , 2000);
     }
 

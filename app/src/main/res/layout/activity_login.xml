@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="@mipmap/login_bg">
+
+        <ImageView
+            android:layout_width="@dimen/x480"
+            android:layout_height="@dimen/y264"
+            android:src="@mipmap/login_logo"
+            android:layout_gravity="center"
+            />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <!-- 登录 -->
+        <LinearLayout
+            android:id="@+id/login_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="门店登录"
+                android:textSize="30sp"/>
+
+            <EditText
+                android:layout_width="319dp"
+                android:layout_height="@dimen/y56"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/shape_edit"
+                android:drawableRight="@mipmap/login_name"/>
+
+            <EditText
+                android:layout_width="319dp"
+                android:layout_height="@dimen/y56"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/shape_edit"
+                android:drawableRight="@mipmap/login_pass"/>
+
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="319dp"
+                android:layout_marginTop="44dp"
+                android:layout_height="@dimen/y56"
+                android:background="@drawable/shape_btn_bule"
+                android:textSize="@dimen/text_size_18"
+                android:textColor="@color/color_white_1"
+                android:text="@string/login"/>
+
+            <TextView
+                android:id="@+id/login_forgot_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forgot"
+                android:layout_marginTop="19dp"
+                android:textSize="@dimen/text_size_16"
+                android:textColor="@color/textGray_2"/>
+        </LinearLayout>
+
+        <!-- 找回密码-->
+        <LinearLayout
+            android:id="@+id/login_forgot_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/forgot"
+                android:textSize="30sp"/>
+
+            <EditText
+                android:layout_width="319dp"
+                android:layout_height="@dimen/y56"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/shape_edit"
+                android:hint="@string/login_name"
+                android:drawableRight="@mipmap/login_name"/>
+
+            <EditText
+                android:layout_width="319dp"
+                android:layout_height="@dimen/y56"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/shape_edit"
+                android:hint="@string/login_phone"
+                android:drawableRight="@mipmap/login_phone"/>
+
+            <EditText
+                android:layout_width="319dp"
+                android:layout_height="@dimen/y56"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/shape_edit"
+                android:hint="@string/login_code"
+                />
+
+            <EditText
+                android:layout_width="319dp"
+                android:layout_height="@dimen/y56"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/shape_edit"
+                android:hint="@string/login_new_pass"
+                android:drawableRight="@mipmap/login_pass"/>
+
+            <EditText
+                android:layout_width="319dp"
+                android:layout_height="@dimen/y56"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/shape_edit"
+                android:hint="@string/login_new_pass_again"
+                android:drawableRight="@mipmap/login_pass"/>
+
+
+            <Button
+                android:id="@+id/login_forgot_submit_btn"
+                android:layout_width="319dp"
+                android:layout_marginTop="44dp"
+                android:layout_height="@dimen/y56"
+                android:background="@drawable/shape_btn_bule"
+                android:textSize="@dimen/text_size_18"
+                android:textColor="@color/color_white_1"
+                android:text="@string/submit"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

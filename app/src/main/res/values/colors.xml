@@ -9,8 +9,12 @@
 
     <color name="textBlack">@color/black</color>
     <color name="textGray">#999999</color>
+    <color name="textGray_2">#919CA9</color>
+    <color name="textGray_3">#8C9299</color>
 
     <color name="color_black_1">#35394F</color>
+    <color name="color_black_2">#242B34</color>
+    <color name="color_black_3">#1B2027</color>
 
 
     <color name="color_bule_1">#448EF1</color>

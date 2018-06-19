@@ -57,4 +57,22 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:backgroundDimEnabled">false</item><!-- 模糊 -->
     </style>
+    
+    <style name="text_item_name">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/textGray_3</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="text_item_content">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/color_black_2</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
 </resources>

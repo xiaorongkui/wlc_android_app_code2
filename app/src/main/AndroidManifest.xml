@@ -49,7 +49,7 @@
         <activity android:name=".ui.activity.StaffManagementActivity" />
         <activity android:name=".ui.activity.StaffManagementSettingActivity" />
         <activity android:name=".ui.activity.DutyManagementActivity" />
-        <activity android:name=".ui.activity.StaffManagementChangeActivity"></activity>
+        <activity android:name=".ui.activity.StaffManagementChangeActivity" />
         <activity android:name=".ui.activity.DonateRecordActivity" />
         <activity
             android:name=".ui.activity.MessageCenterActivity"
@@ -59,10 +59,11 @@
         <activity android:name=".ui.activity.StaffManagementActivity" />
         <activity android:name=".ui.activity.StaffManagementSettingActivity" />
         <activity android:name=".ui.activity.DutyManagementActivity" />
-        <activity android:name=".ui.activity.StaffManagementChangeActivity"></activity>
-        <activity android:name=".ui.activity.CommodityManagementActivity"/>
-        <activity android:name=".ui.activity.HeadquartersOrderActivity"/>
-        <activity android:name=".ui.activity.SystemSettingActivity"/>
+        <activity android:name=".ui.activity.StaffManagementChangeActivity" />
+        <activity android:name=".ui.activity.CommodityManagementActivity" />
+        <activity android:name=".ui.activity.HeadquartersOrderActivity" />
+        <activity android:name=".ui.activity.SystemSettingActivity" />
+        <activity android:name=".ui.activity.LoginActivity"></activity>
     </application>
 
 </manifest>

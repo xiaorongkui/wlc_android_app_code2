@@ -6,6 +6,13 @@
     <string name="back">返回</string>
     <string name="confirm">确认</string>
     <string name="cancel">取消</string>
+    <string name="login">登录</string>
+    <string name="login_name">登录账号</string>
+    <string name="login_phone">手机号码</string>
+    <string name="login_code">手机验证码</string>
+    <string name="login_new_pass">输入新密码</string>
+    <string name="login_new_pass_again">重复密码</string>
+    <string name="forgot">忘记密码</string>
     <string name="donation_program">捐赠项目:</string>
     <string name="donation_money">捐赠金额</string>
     <string name="donation_money_notice">捐赠金额，单位:元</string>
