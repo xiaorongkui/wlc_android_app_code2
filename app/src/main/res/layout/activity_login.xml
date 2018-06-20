@@ -4,25 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
+
     <FrameLayout
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@mipmap/login_bg">
 
         <ImageView
             android:layout_width="@dimen/x480"
             android:layout_height="@dimen/y264"
-            android:src="@mipmap/login_logo"
             android:layout_gravity="center"
-            />
+            android:src="@mipmap/login_logo"/>
 
     </FrameLayout>
 
     <RelativeLayout
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:gravity="center">
 
         <!-- 登录 -->
@@ -31,15 +31,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:visibility="visible"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:text="门店登录"
-                android:textSize="30sp"/>
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
             <EditText
                 android:layout_width="319dp"
@@ -59,21 +59,21 @@
             <Button
                 android:id="@+id/login_btn"
                 android:layout_width="319dp"
-                android:layout_marginTop="44dp"
                 android:layout_height="@dimen/y56"
+                android:layout_marginTop="44dp"
                 android:background="@drawable/shape_btn_bule"
-                android:textSize="@dimen/text_size_18"
+                android:text="@string/login"
                 android:textColor="@color/color_white_1"
-                android:text="@string/login"/>
+                android:textSize="@dimen/text_size_18"/>
 
             <TextView
                 android:id="@+id/login_forgot_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/forgot"
                 android:layout_marginTop="19dp"
-                android:textSize="@dimen/text_size_16"
-                android:textColor="@color/textGray_2"/>
+                android:text="@string/forgot"
+                android:textColor="@color/textGray_2"
+                android:textSize="@dimen/text_size_16"/>
         </LinearLayout>
 
         <!-- 找回密码-->
@@ -82,32 +82,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:visibility="gone"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:text="@string/forgot"
-                android:textSize="30sp"/>
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
             <EditText
                 android:layout_width="319dp"
                 android:layout_height="@dimen/y56"
                 android:layout_marginTop="44dp"
                 android:background="@drawable/shape_edit"
-                android:hint="@string/login_name"
-                android:drawableRight="@mipmap/login_name"/>
+                android:drawableRight="@mipmap/login_name"
+                android:hint="@string/login_name"/>
 
             <EditText
                 android:layout_width="319dp"
                 android:layout_height="@dimen/y56"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/shape_edit"
-                android:hint="@string/login_phone"
-                android:drawableRight="@mipmap/login_phone"/>
+                android:drawableRight="@mipmap/login_phone"
+                android:hint="@string/login_phone"/>
 
             <EditText
                 android:layout_width="319dp"
@@ -122,27 +122,27 @@
                 android:layout_height="@dimen/y56"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/shape_edit"
-                android:hint="@string/login_new_pass"
-                android:drawableRight="@mipmap/login_pass"/>
+                android:drawableRight="@mipmap/login_pass"
+                android:hint="@string/login_new_pass"/>
 
             <EditText
                 android:layout_width="319dp"
                 android:layout_height="@dimen/y56"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/shape_edit"
-                android:hint="@string/login_new_pass_again"
-                android:drawableRight="@mipmap/login_pass"/>
+                android:drawableRight="@mipmap/login_pass"
+                android:hint="@string/login_new_pass_again"/>
 
 
             <Button
                 android:id="@+id/login_forgot_submit_btn"
                 android:layout_width="319dp"
-                android:layout_marginTop="44dp"
                 android:layout_height="@dimen/y56"
+                android:layout_marginTop="44dp"
                 android:background="@drawable/shape_btn_bule"
-                android:textSize="@dimen/text_size_18"
+                android:text="@string/submit"
                 android:textColor="@color/color_white_1"
-                android:text="@string/submit"/>
+                android:textSize="@dimen/text_size_18"/>
 
         </LinearLayout>
 
