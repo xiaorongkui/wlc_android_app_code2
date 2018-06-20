@@ -8,6 +8,7 @@ import android.widget.ScrollView;
 
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.model.CharitableListModel;
+import com.qmkj.wlc.model.PaymethodModel;
 import com.qmkj.wlc.ui.activity.base.BaseFragment;
 import com.qmkj.wlc.ui.adapter.CharitableGrideAdapter;
 import com.qmkj.wlc.ui.adapter.CharitableRecyAdapter;
@@ -126,23 +127,28 @@ public class CharitableDonFragment extends BaseFragment {
         charitableRecyAdapter.update(listData);
     }
 
-    List<String> payMethodData = new ArrayList<>();
+    List<PaymethodModel> payMethodData = new ArrayList<>();
     List<CharitableListModel> listData = new ArrayList<>();
 
     /**
      * 初始化支付方式
      */
     private void initGridView() {
-        payMethodData.add("余额支付");
-        payMethodData.add("XT支付");
-        payMethodData.add("支付宝支付");
-        payMethodData.add("微信支付");
-        payMethodData.add("线下支付");
+        payMethodData.add(new PaymethodModel("余额支付", false));
+        payMethodData.add(new PaymethodModel("XT支付", false));
+        payMethodData.add(new PaymethodModel("支付宝支付", false));
+        payMethodData.add(new PaymethodModel("微信支付", false));
+        payMethodData.add(new PaymethodModel("线下支付", false));
         CharitableGrideAdapter charitableGrideAdapter = new CharitableGrideAdapter(mContext, R.layout
                 .chartiable_pay_method_gv_item_, payMethodData);
         payMethodGv.setAdapter(charitableGrideAdapter);
         payMethodGv.setOnItemClickListener((parent, view, position, id) -> {
-
+            PaymethodModel paymethodModel = payMethodData.get(position);
+            for (int i = 0; i < payMethodData.size(); i++) {
+                payMethodData.set(i, new PaymethodModel(payMethodData.get(i).getName(), false));
+            }
+            payMethodData.set(position, new PaymethodModel(paymethodModel.getName(), true));
+            charitableGrideAdapter.notifyDataSetChanged();
         });
     }
 }

@@ -18,7 +18,7 @@
             android:id="@+id/charitable_donation_left_iv"
             android:layout_width="@dimen/x64"
             android:layout_height="@dimen/y64"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/charitable_donation_unselect"/>
 
         <TextView
             android:id="@+id/charitable_donation_left_tv"
@@ -41,7 +41,7 @@
             android:id="@+id/customer_reservation_left_iv"
             android:layout_width="@dimen/x64"
             android:layout_height="@dimen/y64"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/customer_reservation_unselect"/>
 
         <TextView
             android:id="@+id/customer_reservation_left_tv"
@@ -64,7 +64,7 @@
             android:id="@+id/guest_order_left_iv"
             android:layout_width="@dimen/x64"
             android:layout_height="@dimen/y64"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/guest_order_unselect"/>
 
         <TextView
             android:id="@+id/guest_order_left_tv"
@@ -87,7 +87,7 @@
             android:id="@+id/guest_list_left_iv"
             android:layout_width="@dimen/x64"
             android:layout_height="@dimen/y64"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/guest_list_unselect"/>
 
         <TextView
             android:id="@+id/guest_list_left_tv"
@@ -108,5 +108,5 @@
         android:layout_height="@dimen/y40"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/y32"
-        android:src="@mipmap/login_pass"/>
+        android:src="@mipmap/login_left"/>
 </LinearLayout>

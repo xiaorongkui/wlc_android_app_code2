@@ -31,7 +31,7 @@ public class CustomerReservationRecyAdapter extends XBaseAdapter<CharitableListM
     protected void convert(XBaseViewHolder helper, CharitableListModel item) {
         helper.getView(R.id.customer_reservation_ll).setBackgroundColor(ResourcesUtil.getColor(item.isSelect() ? R
                 .color.textGray : R.color.color_white_1));
-        helper.getView(R.id.customer_reservation_line).setVisibility(helper.getLayoutPosition() == 0 ? View.INVISIBLE
-                : View.VISIBLE);
+        helper.getView(R.id.customer_reservation_line).setVisibility(helper.getLayoutPosition() == getItemCount() - 1
+                ? View.INVISIBLE : View.VISIBLE);
     }
 }

@@ -11,7 +11,7 @@
         android:layout_width="@dimen/x44"
         android:layout_height="@dimen/y44"
         android:layout_marginStart="@dimen/x32"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/notice"/>
 
     <TextView
         android:id="@+id/notice_title_type_tv"

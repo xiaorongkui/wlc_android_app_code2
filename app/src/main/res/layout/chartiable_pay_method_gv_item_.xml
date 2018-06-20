@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
+              android:id="@+id/charitable_donation_pyamethod_ll"
               android:layout_height="wrap_content"
-              android:background="@drawable/shape_paymethod"
+              android:background="@drawable/shape_paymethod_unselect"
               android:gravity="center"
-              android:orientation="vertical"
-              android:padding="@dimen/y16">
+              android:orientation="vertical">
 
     <TextView
         android:id="@+id/gride_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/y12"
+        android:layout_marginEnd="@dimen/x16"
+        android:layout_marginStart="@dimen/x16"
+        android:layout_marginTop="@dimen/y12"
         android:ellipsize="end"
         android:maxLines="1"
         android:textColor="@color/color_black_9"

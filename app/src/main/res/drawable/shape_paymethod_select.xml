@@ -15,7 +15,7 @@
             <corners android:radius="@dimen/y8"/>
             <gradient
                 android:endColor="@color/color_bule_1"
-                android:startColor="@color/color_bule_2"
+                android:startColor="@color/color_bule_3"
                 android:type="linear"/>
         </shape>
     </item>

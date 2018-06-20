@@ -23,14 +23,14 @@
     <string name="mark">备注</string>
     <string name="donation_mark_notice">捐赠备注，最多200字，非必填</string>
     <string name="pay_method">支付方式</string>
-    <string name="submit">提交</string>
+    <string name="submit">提 交</string>
     <string name="login_out">退出登录</string>
     <string name="store_management">门店管理</string>
     <string name="inputting_appointment_call">输入预约电话</string>
     <string name="search">查询</string>
     <string name="reservation_details">预约详情</string>
     <string name="reservation">预约中</string>
-    <string name="reservation_product">预约产品</string>
+    <string name="reservation_product">预约产品:</string>
     <string name="not_store">未到店</string>
     <string name="confirm_store">确认到店</string>
     <string name="refuse_store">拒绝预约</string>
@@ -97,4 +97,9 @@
     <string name="guest_list_english">ORDER THE GUEST</string>
     <string name="notice_title">【公告】</string>
     <string name="charitable_donation_info">捐赠信息</string>
+    <string name="time_to_store">到店时间:</string>
+    <string name="store_number">到店人数：</string>
+    <string name="contacts">联系人:</string>
+    <string name="contact_number">联系电话:</string>
+    <string name="reservation_area">预约区域:</string>
 </resources>

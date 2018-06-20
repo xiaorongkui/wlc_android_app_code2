@@ -14,7 +14,7 @@
 
     <style name="btn" parent="@style/Widget.AppCompat.Button.Borderless">
         <item name="android:textColor">@color/color_white_1</item>
-        <item name="android:layout_height">@dimen/y40</item>
+        <item name="android:layout_height">@dimen/y48</item>
         <item name="android:textSize">@dimen/text_size_17</item>
 
     </style>

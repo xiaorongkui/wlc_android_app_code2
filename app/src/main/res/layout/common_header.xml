@@ -13,7 +13,8 @@
         android:layout_height="@dimen/y44"
         android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/x36"
-        android:src="@mipmap/ic_launcher"/>
+        android:scaleType="fitXY"
+        android:src="@mipmap/back"/>
 
     <TextView
         android:id="@+id/title"
@@ -25,17 +26,32 @@
         android:textColor="@color/color_white_1"
         android:textSize="@dimen/text_size_18"/>
 
-    <ImageView
-        android:id="@+id/message_iv"
-        android:layout_width="@dimen/x44"
+    <RelativeLayout
+        android:id="@+id/message_rl"
+        android:layout_width="@dimen/x54"
         android:layout_height="@dimen/y44"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="@dimen/x24"
-        android:layout_marginStart="@dimen/x22"
-        android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher"
-        android:text="消息"/>
+        android:layout_marginStart="@dimen/x22">
+
+        <ImageView
+            android:id="@+id/message_iv"
+            android:layout_width="@dimen/x44"
+            android:layout_height="@dimen/y44"
+            android:scaleType="fitXY"
+            android:src="@mipmap/message"/>
+
+        <TextView
+            android:layout_width="@dimen/x20"
+            android:layout_height="@dimen/y16"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/shape_message_icon_bg"
+            android:gravity="center"
+            android:text="6"
+            android:textColor="@color/color_white_1"
+            android:textSize="@dimen/text_size_10"/>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/system_manager_tv"
@@ -43,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="@dimen/y10"
-        android:layout_toStartOf="@id/message_iv"
+        android:layout_toStartOf="@id/message_rl"
         android:text="系统设置"
         android:textSize="@dimen/text_size_30"
         android:visibility="gone"/>
@@ -55,6 +71,5 @@
         android:layout_centerHorizontal="true"
         android:layout_toStartOf="@id/system_manager_tv"
         android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher"
-        android:text="门店管理"/>
+        android:src="@mipmap/store_manager_unselect"/>
 </RelativeLayout>

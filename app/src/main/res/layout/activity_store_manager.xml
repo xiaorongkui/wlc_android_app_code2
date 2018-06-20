@@ -6,91 +6,119 @@
 
     <include layout="@layout/common_header"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/x64"
+            android:layout_height="@dimen/y64"
+            android:layout_marginTop="@dimen/y29"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y12"
+            android:text="qweqweqdw"
+            android:textColor="@color/color_black_2"
+            android:textSize="@dimen/text_size_18"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y24">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x56">
+
+                <ImageView
+                    android:layout_width="@dimen/x24"
+                    android:layout_height="@dimen/y24"
+                    android:src="@mipmap/store_manager_user"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x12"
+                    android:text="张三"
+                    android:textColor="@color/color_black_2"
+                    android:textSize="@dimen/text_size_16"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/x56">
+
+                <ImageView
+                    android:layout_width="@dimen/x24"
+                    android:layout_height="@dimen/y24"
+                    android:src="@mipmap/store_manager_phone"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x12"
+                    android:text="180****9982"
+                    android:textColor="@color/color_black_2"
+                    android:textSize="@dimen/text_size_16"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/x56"
+                android:layout_marginStart="@dimen/x56">
+
+                <ImageView
+                    android:layout_width="@dimen/x24"
+                    android:layout_height="@dimen/y24"
+                    android:src="@mipmap/store_manager_clerk"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x12"
+                    android:text="店员"
+                    android:textColor="@color/color_black_2"
+                    android:textSize="@dimen/text_size_16"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/y1"
+        android:layout_marginTop="@dimen/y8"
         android:background="@color/textGray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/x51"
+        android:layout_marginStart="@dimen/x51"
+        android:layout_marginTop="@dimen/y43"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="@dimen/x300"
-                android:layout_height="@dimen/y200"
-                android:layout_marginTop="@dimen/y10"
-                android:scaleType="fitXY"
-                android:src="@mipmap/ic_launcher"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y20"
-                android:text="账号：qweqweqdw"
-                android:textSize="@dimen/text_size_24"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y10"
-                android:text="姓名：张三"
-                android:textSize="@dimen/text_size_24"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y10"
-                android:text="手机：131****1234 "
-                android:textSize="@dimen/text_size_24"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/y10"
-                android:text="职务：店员"
-                android:textSize="@dimen/text_size_24"/>
-
-            <TextView
-                android:id="@+id/login_out_tv"
-                android:layout_width="@dimen/x300"
-                android:layout_height="@dimen/y60"
-                android:layout_marginTop="@dimen/y40"
-                android:background="@drawable/shape_login_out"
-                android:gravity="center"
-                android:text="@string/login_out"
-                android:textSize="@dimen/text_size_28"/>
-        </LinearLayout>
-
-        <View
-            android:layout_width="@dimen/y1"
-            android:layout_height="match_parent"
-            android:background="@color/textGray"/>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <com.qmkj.wlc.ui.view.FullGridView
-                android:id="@+id/store_management_gv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/y5"
-                android:background="@color/color_white_1"
-                android:clickable="false"
-                android:listSelector="@android:color/transparent"
-                android:numColumns="2"
-                android:scrollbars="horizontal"/>
-        </LinearLayout>
-
+        <com.qmkj.wlc.ui.view.FullGridView
+            android:id="@+id/store_management_gv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white_1"
+            android:clickable="false"
+            android:horizontalSpacing="@dimen/x60"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="5"
+            android:scrollbars="horizontal"
+            android:verticalSpacing="@dimen/y32"/>
     </LinearLayout>
 </LinearLayout>

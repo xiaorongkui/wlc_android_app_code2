@@ -5,9 +5,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.qmkj.wlc.R;
+import com.qmkj.wlc.model.StoreManagerModel;
 
 import java.util.List;
 
@@ -21,9 +23,9 @@ public class StoreManagementGrideAdapter extends BaseAdapter {
 
     private final Context context;
     private final int layoutId;
-    private final List<String> data;
+    private final List<StoreManagerModel> data;
 
-    public StoreManagementGrideAdapter(Context mContext, int layoutId, List<String> data) {
+    public StoreManagementGrideAdapter(Context mContext, int layoutId, List<StoreManagerModel> data) {
         this.context = mContext;
         this.layoutId = layoutId;
         this.data = data;
@@ -47,23 +49,29 @@ public class StoreManagementGrideAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        String dataItem = data.get(position);
+        StoreManagerModel storeManagerModel = data.get(position);
         Holder holder;
         if (convertView == null) {
             convertView = View.inflate(context, layoutId, null);
             holder = new Holder();
+            holder.iv = convertView.findViewById(R.id.gride_iv);
             holder.tv = convertView.findViewById(R.id.gride_text);
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
         }
-        if (!TextUtils.isEmpty(dataItem)) {
-            holder.tv.setText(dataItem);
+        if (storeManagerModel != null) {
+            if (!TextUtils.isEmpty(storeManagerModel.getName())) {
+                holder.tv.setText(storeManagerModel.getName());
+            }
+            holder.iv.setImageResource(storeManagerModel.getResId());
         }
+
         return convertView;
     }
 
     private class Holder {
         TextView tv;
+        ImageView iv;
     }
 }

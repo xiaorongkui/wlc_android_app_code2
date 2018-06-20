@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.qmkj.wlc.R;
 import com.qmkj.wlc.model.CommodityManagerLeftModel;
@@ -14,6 +15,7 @@ import com.qmkj.wlc.ui.adapter.CommodityManagerLeftRecyAdapter;
 import com.qmkj.wlc.ui.adapter.CommodityManagerRightRecyAdapter;
 import com.qmkj.wlc.ui.view.FullGridView;
 import com.qmkj.wlc.ui.view.refreshlayout.XRefreshLayout;
+import com.qmkj.wlc.utils.ResourcesUtil;
 import com.qmkj.wlc.utils.RxUtil;
 
 import java.util.ArrayList;
@@ -32,8 +34,6 @@ import io.reactivex.Observable;
  */
 
 public class CommodityManagementActivity extends BaseActivity {
-    @BindView(R.id.product_service_list_rv)
-    RecyclerView productServiceListRv;
     @BindView(R.id.product_list_rv)
     RecyclerView productListRv;
     @BindView(R.id.product_list_xrl)
@@ -46,13 +46,15 @@ public class CommodityManagementActivity extends BaseActivity {
     LinearLayout productAddLl;
     @BindView(R.id.add_new_product_bt)
     Button addNewProductBt;
+    @BindView(R.id.title)
+    TextView title;
     private boolean isCanRefresh;
     private CommodityManagerRightRecyAdapter commodityManagerRightRecyAdapter;
     private boolean mIsLoadMore;
 
     @Override
     protected void initTitle() {
-
+        title.setText(ResourcesUtil.getString(R.string.commodity_management));
     }
 
     @Override
@@ -75,14 +77,8 @@ public class CommodityManagementActivity extends BaseActivity {
     List<Object> rightDataList = new ArrayList<>();
 
     private void initRecyclerView() {
+        //todo
         CommodityManagerLeftRecyAdapter commodityManagerLeftRecyAdapter = new CommodityManagerLeftRecyAdapter(mContext);
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(mContext);
-        mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        productServiceListRv.setLayoutManager(mLayoutManager);
-        productServiceListRv.setAdapter(commodityManagerLeftRecyAdapter);
-        commodityManagerLeftRecyAdapter.setOnItemClickListener((adapter, view, position) -> {
-
-        });
         leftDataList.add(new CommodityManagerLeftModel("定制产品"));
         leftDataList.add(new CommodityManagerLeftModel("高档产品"));
         leftDataList.add(new CommodityManagerLeftModel("普通产品"));

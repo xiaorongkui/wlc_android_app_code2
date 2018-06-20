@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.qmkj.wlc.R;
+import com.qmkj.wlc.model.PaymethodModel;
+import com.qmkj.wlc.utils.ResourcesUtil;
 
 import java.util.List;
 
@@ -20,9 +22,9 @@ public class CharitableGrideAdapter extends BaseAdapter {
 
     private final Context context;
     private final int layoutId;
-    private final List<String> data;
+    private final List<PaymethodModel> data;
 
-    public CharitableGrideAdapter(Context mContext, int layoutId, List<String> data) {
+    public CharitableGrideAdapter(Context mContext, int layoutId, List<PaymethodModel> data) {
         this.context = mContext;
         this.layoutId = layoutId;
         this.data = data;
@@ -46,21 +48,25 @@ public class CharitableGrideAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        String dataItem = data.get(position);
+        PaymethodModel paymethodModel = data.get(position);
         Holder holder;
         if (convertView == null) {
             convertView = View.inflate(context, layoutId, null);
             holder = new Holder();
             holder.tv = convertView.findViewById(R.id.gride_text);
+            holder.ll = convertView.findViewById(R.id.charitable_donation_pyamethod_ll);
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
         }
-        holder.tv.setText(dataItem);
+        holder.tv.setText(paymethodModel.getName());
+        holder.ll.setBackground(ResourcesUtil.getDrawable(paymethodModel.isSelect() ? R.drawable
+                .shape_paymethod_select : R.drawable.shape_paymethod_unselect));
         return convertView;
     }
 
     private class Holder {
         TextView tv;
+        View ll;
     }
 }

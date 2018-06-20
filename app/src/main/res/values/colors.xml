@@ -26,9 +26,16 @@
 
     <color name="color_bule_1">#37A7FF</color>
     <color name="color_bule_2">#5299F7</color>
+    <color name="color_bule_3">#7B8FFF</color>
 
     <color name="color_white_1">#FFFFFF</color>
     <color name="color_white_2">#fff7f9fc</color>
+
+
+    <color name="color_yellow_1">#33FF6E30</color>
+    <color name="color_yellow_2">#FFFF6E30</color>
+
+    <color name="color_red_1">#FFE72723</color>
 
 
 </resources>

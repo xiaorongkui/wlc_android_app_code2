@@ -13,7 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/y64"
         android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/home_login"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                     android:layout_height="@dimen/y88"
                     android:layout_marginTop="@dimen/y48"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/charitable_donation_home"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
                     android:layout_height="@dimen/y88"
                     android:layout_marginTop="@dimen/y48"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/customer_reservation_home"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -149,7 +149,7 @@
                     android:layout_height="@dimen/y88"
                     android:layout_marginTop="@dimen/y48"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/guest_order_home"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -201,7 +201,7 @@
                     android:layout_height="@dimen/y88"
                     android:layout_marginTop="@dimen/y48"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/guest_list_home"/>
 
                 <TextView
                     android:layout_width="wrap_content"

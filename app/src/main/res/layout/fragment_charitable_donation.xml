@@ -61,7 +61,7 @@
                     android:layout_height="@dimen/y24"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:src="@mipmap/detele"/>
             </RelativeLayout>
 
 
@@ -239,7 +239,7 @@
                 android:clickable="false"
                 android:listSelector="@android:color/transparent"
                 android:numColumns="5"
-                android:verticalSpacing="@dimen/x20"
+                android:horizontalSpacing="@dimen/y10"
                 android:scrollbars="horizontal"/>
 
             <View
@@ -250,8 +250,9 @@
             <Button
                 android:id="@+id/submit_bt"
                 style="@style/btn_blue"
+                android:layout_gravity="bottom"
                 android:layout_marginBottom="@dimen/y44"
-                android:layout_marginTop="@dimen/y25"
+                android:layout_marginTop="@dimen/y100"
                 android:text="@string/submit"/>
         </LinearLayout>
     </ScrollView>

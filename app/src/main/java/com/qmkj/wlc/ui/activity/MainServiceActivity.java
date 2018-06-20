@@ -110,7 +110,7 @@ public class MainServiceActivity extends BaseActivity {
                 ft.show(charitableDonFragment);
 
                 charitableDonationLeftTv.setTextColor(ResourcesUtil.getColor(R.color.color_bule_1));
-                charitableDonationLeftIv.setImageResource(R.mipmap.login_icon);
+                charitableDonationLeftIv.setImageResource(R.mipmap.charitable_donation_select);
                 break;
             case 1:
                 if (customerReservationFragment == null) {
@@ -119,7 +119,7 @@ public class MainServiceActivity extends BaseActivity {
                 }
                 ft.show(customerReservationFragment);
                 customerReservationLeftTv.setTextColor(ResourcesUtil.getColor(R.color.color_bule_1));
-                customerReservationLeftIv.setImageResource(R.mipmap.login_icon);
+                customerReservationLeftIv.setImageResource(R.mipmap.customer_reservation_select);
                 break;
             case 2:
                 if (guestOrdeFragment == null) {
@@ -129,7 +129,7 @@ public class MainServiceActivity extends BaseActivity {
                 ft.show(guestOrdeFragment);
 
                 guestOrderLeftTv.setTextColor(ResourcesUtil.getColor(R.color.color_bule_1));
-                guestOrderLeftIv.setImageResource(R.mipmap.login_icon);
+                guestOrderLeftIv.setImageResource(R.mipmap.guest_order_select);
                 break;
             case 3:
                 if (orderTheGuestFragment == null) {
@@ -138,17 +138,17 @@ public class MainServiceActivity extends BaseActivity {
                 }
                 ft.show(orderTheGuestFragment);
                 guestListLeftTv.setTextColor(ResourcesUtil.getColor(R.color.color_bule_1));
-                guestListLeftIv.setImageResource(R.mipmap.login_icon);
+                guestListLeftIv.setImageResource(R.mipmap.guest_list_select);
                 break;
         }
         ft.commit();
     }
 
     private void resetImages() {
-        charitableDonationLeftIv.setImageResource(R.mipmap.ic_launcher);
-        customerReservationLeftIv.setImageResource(R.mipmap.ic_launcher);
-        guestOrderLeftIv.setImageResource(R.mipmap.ic_launcher);
-        guestListLeftIv.setImageResource(R.mipmap.ic_launcher);
+        charitableDonationLeftIv.setImageResource(R.mipmap.charitable_donation_unselect);
+        customerReservationLeftIv.setImageResource(R.mipmap.customer_reservation_unselect);
+        guestOrderLeftIv.setImageResource(R.mipmap.guest_order_unselect);
+        guestListLeftIv.setImageResource(R.mipmap.guest_list_unselect);
 
         charitableDonationLeftTv.setTextColor(ResourcesUtil.getColor(R.color.color_white_1));
         customerReservationLeftTv.setTextColor(ResourcesUtil.getColor(R.color.color_white_1));
